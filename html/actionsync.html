@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ActionSync</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/actionsync.css" />
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <nav>
+                <a href="/index.html" class="logo"><img src="/images/Home/logo.webp" alt="Kasaji.AI" /></a>
+                <ul class="nav-links">
+                    <li><a href="voicepulse.html" data-translate="nav-voicepulse">VoicePulse</a></li>
+                    <li><a href="insightai.html" data-translate="nav-insightai">InsightAI</a></li>
+                    <li><a href="actionsync.html" data-translate="nav-actionsync">ActionSync</a></li>
+                    <li><a href="insights.html" data-translate="nav-insights">Our Insights</a></li>
+                    <li><a href="about.html" data-translate="nav-about">About Us</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="lang-switcher" onclick="toggleLanguage()" title="Toggle Language"><i
+                            class="fas fa-globe"></i></div>
+                    <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
+                </div>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="text-decorative-square text-square-1"></div>
+                    <div class="text-decorative-square text-square-2"></div>
+                    <div class="text-decorative-square text-square-3"></div>
+                    <div class="text-decorative-square text-square-4"></div>
+                    <div class="text-decorative-square text-square-5"></div>
+                    <div class="text-decorative-square text-square-6"></div>
+                    <h1 class="hero-title" data-translate="hero-title-actionsync">ActionSync</h1>
+                    <p class="hero-description" data-translate="hero-description-actionsync">
+                        A real-time execution layer powered by AI to turn insights into immediate actions across the
+                        care journey.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="/images/Home/action.png" alt="ActionSync Hero" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline" aria-label="Five Execution Nodes">
+        <div class="container">
+            <div class="timeline-header">
+                <h2 class="content-title" data-translate="content-title">Five Execution Nodes</h2>
+                <p class="content-subtitle" data-translate="content-subtitle">
+                    Use AI-generated suggestions to guide decision-making and strategy adjustments
+                </p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <span class="timeline-line" aria-hidden="true"></span>
+                <!-- 1) صورة يسار (side-right): media-1 + card-1 -->
+                <article id="node1" class="timeline-item side-right theme-amber">
+                    <div class="node-media media-1">
+                        <img src="/images/New folder/1.jpg" alt="Proactive Patient Outreach Illustration" />
+                    </div>
+                    <div class="node-copy card-1">
+                        <div class="node-icon"><i class="fas fa-user-check"></i></div>
+                        <h3 class="node-title" data-translate="node-1-title">Proactive Patient Outreach & Complaint
+                            Resolution</h3>
+                        <p class="node-description" data-translate="node-1-desc">
+                            Preemptive intervention reduces escalation and transforms potential complaints into
+                            opportunities for increased trust and satisfaction.
+                        </p>
+                        <div class="node-tags">
+                            <span class="node-tag" data-translate="node-1-tag-1">Alert Automation</span>
+                            <span class="node-tag" data-translate="node-1-tag-2">Patient Interaction</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2) صورة يمين (side-left): media-2 + card-2 -->
+                <article id="node2" class="timeline-item side-left theme-purple">
+                    <div class="node-media media-2">
+                        <img src="/images/New folder/2.jpg" alt="Experience-Driven Care Recommendations Illustration" />
+                    </div>
+                    <div class="node-copy card-2">
+                        <div class="node-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3 class="node-title" data-translate="node-2-title">Experience-Driven Care Recommendations</h3>
+                        <p class="node-description" data-translate="node-2-desc">
+                            Experience insights are instantly translated into operational or clinical decisions that
+                            enhance care quality in real time.
+                        </p>
+                        <div class="node-tags">
+                            <span class="node-tag" data-translate="node-2-tag-1">Clinical Intelligence</span>
+                            <span class="node-tag" data-translate="node-2-tag-2">Care Optimization</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3) صورة يسار (side-right): media-3 + card-3 -->
+                <article id="node3" class="timeline-item side-right theme-teal">
+                    <div class="node-media media-3">
+                        <img src="/images/New folder/3.jpg" alt="Virtual Health Assistants Illustration" />
+                    </div>
+                    <div class="node-copy card-3">
+                        <div class="node-icon"><i class="fas fa-robot"></i></div>
+                        <h3 class="node-title" data-translate="node-3-title">Virtual Health Assistants</h3>
+                        <p class="node-description" data-translate="node-3-desc">
+                            Instant multilingual support reduces staff load and accelerates patient response across
+                            touchpoints.
+                        </p>
+                        <div class="node-tags">
+                            <span class="node-tag" data-translate="node-3-tag-1">Conversational AI</span>
+                            <span class="node-tag" data-translate="node-3-tag-2">Chatbots</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4) صورة يمين (side-left): media-4 + card-4 -->
+                <article id="node4" class="timeline-item side-left theme-rose">
+                    <div class="node-media media-4">
+                        <img src="/images/New folder/4.jpg" alt="Care Coordination Agents Illustration" />
+                    </div>
+                    <div class="node-copy card-4">
+                        <div class="node-icon"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="node-title" data-translate="node-4-title">AI-Powered Care Coordination Agents</h3>
+                        <p class="node-description" data-translate="node-4-desc">
+                            Automated coordination across clinical and administrative teams minimizes delays and
+                            prevents decision conflicts.
+                        </p>
+                        <div class="node-tags">
+                            <span class="node-tag" data-translate="node-4-tag-1">Team Coordination</span>
+                            <span class="node-tag" data-translate="node-4-tag-2">Workflow Automation</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5) صورة يسار (side-right): media-5 + card-5 -->
+                <article id="node5" class="timeline-item side-right theme-slate">
+                    <div class="node-media media-5">
+                        <img src="/images/New folder/5.jpg" alt="Agentic AI–Enabled Care Navigator Illustration" />
+                    </div>
+                    <div class="node-copy card-5">
+                        <div class="node-icon"><i class="fas fa-route"></i></div>
+                        <h3 class="node-title" data-translate="node-5-title">Agentic AI–Enabled Care Navigator</h3>
+                        <p class="node-description" data-translate="node-5-desc">
+                            Intelligent guidance directs patients throughout their care journey in real time, reducing
+                            confusion and loss of follow-up.
+                        </p>
+                        <div class="node-tags">
+                            <span class="node-tag" data-translate="node-5-tag-1">Journey Mapping</span>
+                            <span class="node-tag" data-translate="node-5-tag-2">Autonomous Agents</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <h2 class="contact-title" data-translate="contact-title">Ready to Transform Your Business?</h2>
+                <p class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference
+                    our platform can make</p>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="info-title" data-translate="contact-info-title">Contact Information</h3>
+                        <div class="info-item">
+                            <div class="info-icon phone-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-details">
+                                <h4 data-translate="contact-phone">Phone</h4>
+                                <p>07777789999</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-details">
+                                <h4 data-translate="contact-email">Email</h4>
+                                <p>contact@kasaji.AI</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-details">
+                                <h4 data-translate="contact-address">Address</h4>
+                                <p>123 Tech Street, Innovation City</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- داخل Html/voicepulse.html (أو أي صفحة فيها الفورم) -->
+                    <div class="contact-form">
+                        <form id="contactForm" action="/send.php" method="POST" novalidate>
+                            <div class="form-group">
+                                <input id="form-name" type="text" class="form-control" name="name"
+                                    data-translate-placeholder="form-name" placeholder="Your Name" required />
+                            </div>
+                            <div class="form-group">
+                                <input id="form-email" type="email" class="form-control" name="email"
+                                    data-translate-placeholder="form-email" placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea id="form-message" class="form-control" name="message"
+                                    data-translate-placeholder="form-message" placeholder="Your Message"
+                                    required></textarea>
+                            </div>
+
+                            <!-- honeypot لمنع السبام -->
+                            <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
+
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn" data-translate="form-submit">Send
+                                    Message</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Kasaji.AI</div>
+                <p class="footer-description" data-translate="footer-description">Transforming businesses through
+                    intelligent customer insights</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="copyright">
+                    <p data-translate="footer-copyright">© 2025 Kasaji.AI. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/Js/actionsync.js"></script>
+
+</body>
+
+</html>

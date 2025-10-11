@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InsightAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/insightai.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader-container" id="loader"><div class="loader"></div></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="container">
+      <nav>
+        <a href="/index.html" class="logo">
+          <img src="../images/Home/logo.webp" alt="Kasaji.AI Logo">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="voicepulse.html" data-translate="nav-voicepulse">VoicePulse</a></li>
+          <li><a href="insightai.html" data-translate="nav-insightai">InsightAI</a></li>
+          <li><a href="actionsync.html" data-translate="nav-actionsync">ActionSync</a></li>
+          <li><a href="insights.html" data-translate="nav-insights">Our Insights</a></li>
+          <li><a href="about.html" data-translate="nav-about">About Us</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-switcher" type="button" onclick="toggleLanguage()" aria-label="Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
+          <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <!-- animated squares (kept) -->
+          <div class="text-decorative-square text-square-1"></div>
+          <div class="text-decorative-square text-square-2"></div>
+          <div class="text-decorative-square text-square-3"></div>
+          <div class="text-decorative-square text-square-4"></div>
+          <div class="text-decorative-square text-square-5"></div>
+          <div class="text-decorative-square text-square-6"></div>
+
+          <h1 class="hero-title" data-translate="hero-title">InsightAI</h1>
+          <p class="hero-description" data-translate="hero-description">
+            Advanced insights platform connecting experience to behavior, outcomes, and future expectations.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img src="/images/Home/ai.png" alt="InsightAI Illustration" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="main-content">
+    <!-- Intelligence Layer -->
+    <section class="intelligence-layer">
+      <div class="container">
+        <div class="intelligence-content">
+          <div class="decorative-dots">
+            <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
+          </div>
+          <h2 class="intelligence-text" data-translate="intelligence-layer-text">
+            A next-generation intelligence layer that transforms feedback into foresight and action.
+          </h2>
+          <div class="decorative-dots bottom">
+            <span class="dot dot-4"></span><span class="dot dot-5"></span><span class="dot dot-6"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Patient Feedback Insights -->
+      <div class="section">
+        <div class="section-content">
+          <div class="section-text">
+            <h2 class="section-title" data-translate="patient-feedback-title">Patient Feedback Insights</h2>
+            <p class="section-description" data-translate="patient-feedback-desc">
+              A deep analytical approach to multi-source experience data, designed to turn feedback into measurable indicators.
+            </p>
+            <ul class="section-features">
+              <li data-translate="patient-feedback-feature-1">Extracts recurring patterns from qualitative and quantitative inputs</li>
+              <li data-translate="patient-feedback-feature-2">Links insights to clinical context, service type, and care stages</li>
+              <li data-translate="patient-feedback-feature-3">Identifies expectation gaps versus actual outcomes</li>
+              <li data-translate="patient-feedback-feature-4">Converts open feedback into structured, improvement-ready signals</li>
+            </ul>
+          </div>
+          <div class="section-image">
+            <img src="/images/insight/Screenshot 2025-10-08 185118.jpg" alt="Patient Feedback Insights">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sentiment & Emotion -->
+      <div class="section">
+        <div class="section-content">
+          <div class="section-image">
+            <img src="/images/insight/2.jpg" alt="Sentiment & Emotion">
+          </div>
+          <div class="section-text">
+            <h2 class="section-title" data-translate="sentiment-title">Sentiment & Emotion Insights</h2>
+            <p class="section-description" data-translate="sentiment-desc">
+              Advanced interpretation of patient language and tone to uncover emotional drivers behind the experience.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centered -->
+      <div class="centered-section">
+        <h2 class="section-title" data-translate="patient-intelligence-title">Patient Intelligence and Experience Insights</h2>
+        <p class="section-description" data-translate="patient-intelligence-desc">
+          A blended analysis of behavioral signals, personal perceptions, and service interactions to reveal deeper layers of the care journey.
+        </p>
+        <ul class="section-features">
+          <li data-translate="patient-intelligence-feature-1">Connecting feedback with patterns of use and engagement</li>
+          <li data-translate="patient-intelligence-feature-2">Tracing the influence of each touchpoint on overall perception</li>
+          <li data-translate="patient-intelligence-feature-3">Prioritizing improvements based on real experiential impact</li>
+        </ul>
+      </div>
+
+      <!-- Predictive -->
+      <div class="section">
+        <div class="section-content">
+          <div class="section-text">
+            <h2 class="section-title" data-translate="predictive-title">Predictive Insights</h2>
+            <p class="section-description" data-translate="predictive-desc">
+              AI-powered forecasting that anticipates what may happen next—before patterns become visible.
+            </p>
+            <p class="section-description" data-translate="predictive-capabilities">Core predictive capabilities:</p>
+            <ul class="section-features">
+              <li data-translate="predictive-feature-1">Early risk identification</li>
+              <li data-translate="predictive-feature-2">Anticipation of satisfaction shifts</li>
+              <li data-translate="predictive-feature-3">Proactive decision support</li>
+            </ul>
+          </div>
+          <div class="section-image">
+            <img src="/images/insight/3.jpg" alt="Predictive Insights">
+          </div>
+        </div>
+      </div>
+
+      <!-- Perspective -->
+      <div class="section">
+        <div class="section-content">
+          <div class="section-image">
+            <img src="/images/insight/4.jpg" alt="Perspective Insights">
+          </div>
+          <div class="section-text">
+            <h2 class="section-title" data-translate="perspective-title">Perspective Insights for Care Improvement</h2>
+            <ul class="section-features">
+              <li data-translate="perspective-feature-1">Compare expectations with delivered reality</li>
+              <li data-translate="perspective-feature-2">Highlight gaps across perspectives</li>
+              <li data-translate="perspective-feature-3">Identify high-impact improvements</li>
+              <li data-translate="perspective-feature-4">Support data-based decisions</li>
+            </ul>
+            <p class="section-description" data-translate="perspective-desc">
+              A next-generation intelligence layer that transforms feedback into foresight and action.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <h2 class="contact-title" data-translate="contact-title">Ready to Transform Your Business?</h2>
+        <p class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference our platform can make</p>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3 class="info-title" data-translate="contact-info-title">Contact Information</h3>
+
+            <div class="info-item">
+              <div class="info-icon phone-icon"><i class="fas fa-phone"></i></div>
+              <div class="info-details">
+                <h4 data-translate="contact-phone">Phone</h4><p>07777789999</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
+              <div class="info-details">
+                <h4 data-translate="contact-email">Email</h4><p>contact@kasaji.AI</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info-details">
+                <h4 data-translate="contact-address">Address</h4><p>123 Tech Street, Innovation City</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contactForm" action="/send.php" method="POST" novalidate>
+              <div class="form-group">
+                <input id="form-name" type="text" class="form-control" name="name" data-translate-placeholder="form-name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input id="form-email" type="email" class="form-control" name="email" data-translate-placeholder="form-email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea id="form-message" class="form-control" name="message" data-translate-placeholder="form-message" placeholder="Your Message" required></textarea>
+              </div>
+              <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
+              <div class="form-group">
+                <button type="submit" class="submit-btn" data-translate="form-submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Kasaji.AI</div>
+        <p class="footer-description" data-translate="footer-description">Transforming businesses through intelligent customer insights</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">
+          <p data-translate="footer-copyright">© 2025 Kasaji.AI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/insightai.js" defer></script>
+</body>
+</html>
