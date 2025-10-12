@@ -1842,8 +1842,8 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
 
 /* Force square 399x399 white background for Action image */
 .img-square-399 {
-  width: 399px !important;
-  height: 399px !important;
+  width: 450px !important;
+  height: 450px !important;
   object-fit: contain !important;
   background: #fff !important;
   border-radius: 16px;
