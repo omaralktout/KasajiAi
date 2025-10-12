@@ -258,18 +258,17 @@ nav {
 /* Hero (compact like ActionSync, same look) */
 .hero {
   background: #fff;
-  /* أقل padding عمودي */
   padding-block: clamp(24px, 4vw, 36px);
   position: relative;
   overflow: hidden;
 }
 
+/* ثبات ارتفاع الهيرو */
 .hero-content {
   display: flex;
   align-items: center;
   gap: 40px;
-  /* ارتفاع مضغوط (كان ~600، الآن ~320) */
-  min-height: 320px;
+  height: 320px;
 }
 
 .hero-text {
@@ -285,7 +284,7 @@ nav {
   line-height: 1.15;
   opacity: 0;
   transform: translateY(24px);
-  animation: fadeInUp .7s ease-out .25s forwards; /* delay لطيف */
+  animation: fadeInUp .7s ease-out .25s forwards;
 }
 
 .hero-description {
@@ -295,38 +294,46 @@ nav {
   line-height: 1.6;
   opacity: 0;
   transform: translateY(24px);
-  animation: fadeInUp .7s ease-out .45s forwards; /* delay أطول شوي */
+  animation: fadeInUp .7s ease-out .45s forwards;
 }
 
+/* التحكم بالصورة */
 .hero-image {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
   text-align: center;
   opacity: 0;
   transform: scale(.95);
-  animation: zoomIn .7s ease-out .6s forwards; /* يدخل بعد النص */
+  animation: zoomIn .7s ease-out .6s forwards;
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
-  /* ضبط حجم الصورة ليتوازن مع النص */
-  max-height: 260px;
+  height: 115%;
+  width: auto;
+  object-fit: contain;
+  transform: translateY(15px); /* 🔽 نزول بسيط للصورة */
   transition: transform .5s;
 }
 
-.hero-image:hover img { transform: scale(1.04); }
+.hero-image:hover img {
+  transform: translateY(15px) scale(1.04);
+}
 
+/* الأنيميشن */
 @keyframes fadeInUp {
   from { transform: translateY(30px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes zoomIn {
   from { transform: scale(.9); opacity: 0; }
-  to   { transform: scale(1);  opacity: 1; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
-/* Animated squares — RTL-safe */
+/* مربعات الزخرفة */
 .hero-text .text-decorative-square {
   position: absolute;
   background: #c4c4c4;
@@ -336,29 +343,42 @@ nav {
   z-index: 3;
 }
 
-/* صغرنا المقاسات/المواضع لتناسب الارتفاع الجديد */
 .text-square-1 { inline-size: 36px; block-size: 36px; inset-block-start: -40px; inset-inline-start: -50px; animation-delay: 0s; }
-.text-square-2 { inline-size: 20px; block-size: 20px; inset-block-start: 60px;  inset-inline-start: -70px; animation-delay: 1s; }
+.text-square-2 { inline-size: 20px; block-size: 20px; inset-block-start: 60px; inset-inline-start: -70px; animation-delay: 1s; }
 .text-square-3 { inline-size: 28px; block-size: 28px; inset-block-end: 110px; inset-inline-end: -60px; animation-delay: 2s; }
-.text-square-4 { inline-size: 12px; block-size: 12px; inset-block-end: 40px;  inset-inline-end: -30px; animation-delay: 3s; }
+.text-square-4 { inline-size: 12px; block-size: 12px; inset-block-end: 40px; inset-inline-end: -30px; animation-delay: 3s; }
 .text-square-5 { inline-size: 18px; block-size: 18px; inset-block-start: 24px; inset-inline-end: 40px; animation-delay: 4s; }
 .text-square-6 { inline-size: 26px; block-size: 26px; inset-block-end: -40px; inset-inline: 50% auto; transform: translateX(-50%); animation-delay: 2.5s; }
 
 @keyframes floatSquaresHero {
-  0%, 100% { transform: translateY(0);   opacity: .8; }
-  50%      { transform: translateY(-10px); opacity: .8; }
+  0%, 100% { transform: translateY(0); opacity: .8; }
+  50% { transform: translateY(-10px); opacity: .8; }
 }
 
 /* ===== Responsive tweaks ===== */
 @media (max-width: 992px) {
-  .hero { padding-block: 24px; }
-  .hero-content { min-height: unset; }          /* خليه مرن بالموبايل */
-  .hero-image img { max-height: 220px; }
+  .hero {
+    padding-block: 24px;
+  }
+  .hero-content {
+    flex-direction: column;
+    height: auto; /* خليه مرن */
+  }
+  .hero-image img {
+    height: auto;
+    max-height: 220px;
+    transform: translateY(0); /* رجعها طبيعي */
+  }
 }
 
 @media (max-width: 576px) {
-  .hero { padding-block: 20px; }
-  .hero-image img { max-height: 200px; }
+  .hero {
+    padding-block: 20px;
+  }
+  .hero-image img {
+    max-height: 200px;
+    transform: translateY(0);
+  }
 }
 
 
