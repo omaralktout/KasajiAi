@@ -231,17 +231,19 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 }
 
 .btn-service {
-  background: var(--accent-color);
-  color: #fff;
+  background: var(--service-cta-bg, var(--accent-color));
+  color: var(--service-cta-text, #fff);
   padding: 18px 32px;
   font-weight: 600;
   border-radius: var(--radius-sm);
   display: inline-block;
+  transition: var(--transition);
 }
 
 .btn-service:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
+  background: var(--service-cta-hover, #2563eb);
 }
 
 /* ================= Header ================= */
@@ -685,6 +687,12 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 
 .service-item.service-even .service-title .highlight {
   color: var(--secondary-color);
+}
+
+/* Force Sync color + weight only for ActionSync section */
+#actionsync .service-title .highlight {
+  color: #6366F1 !important;
+  font-weight: 800;
 }
 
 .service-tagline-secondary {
@@ -1189,7 +1197,7 @@ footer.animate {
 
 .footer-description {
   font-size: 15px;
-  color: var(--text-light);
+  color: #fff;
   margin-block-end: 26px;
   max-width: 500px;
   margin-inline: auto;
@@ -1211,7 +1219,7 @@ footer.animate {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
+  color: #fff;
   transition: .3s;
   flex-shrink: 0;
 }
@@ -1225,7 +1233,7 @@ footer.animate {
   border-top: 1px solid #1F2937;
   padding-block-start: 24px;
   font-size: 14.5px;
-  color: var(--text-light);
+  color: #fff;
 }
 
 /* ================= Back to Top ================= */
@@ -1498,7 +1506,7 @@ html[dir="rtl"] .back-to-top.show {
 
   .hero .container-wide {
     align-items: center;
-    justify-content: space-between;
+    justify-content: space_between;
     gap: 4rem;
   }
 
@@ -1510,7 +1518,6 @@ html[dir="rtl"] .back-to-top.show {
     text-align: start;
   }
 
-  /* was left */
   .hero-image {
     max-width: 500px;
     flex-shrink: 0;
@@ -1536,8 +1543,6 @@ html[dir="rtl"] .back-to-top.show {
   .service-title, .service-description, .service-tagline-secondary {
     text-align: start;
   }
-
-  /* was left */
 }
 
 /* ===== Show Language Switcher on Mobile ===== */
@@ -1731,12 +1736,11 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     opacity: 0.8;
-    animation: floatSquaresQuote 6s ease-in-out infinite; /* اسم خاص بالـ quote */
+    animation: floatSquaresQuote 6s ease-in-out infinite;
     z-index: 1;
 }
 
-/* مواقع المربعات */
- .square-1 {
+.square-1 {
     width: 45px;
     height: 45px;
     top: 10px;
@@ -1744,7 +1748,7 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     animation-delay: 0s;
 }
 
- .square-2 {
+.square-2 {
     width: 30px;
     height: 30px;
     top: 180px;
@@ -1752,7 +1756,7 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     animation-delay: 1s;
 }
 
- .square-3 {
+.square-3 {
     width: 25px;
     height: 25px;
     top: 90px;
@@ -1761,7 +1765,7 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     animation-delay: 2s;
 }
 
- .square-4 {
+.square-4 {
     width: 35px;
     height: 35px;
     top: 190px;
@@ -1769,7 +1773,7 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     animation-delay: 3s;
 }
 
- .square-5 {
+.square-5 {
     width: 28px;
     height: 28px;
     bottom: 40px;
@@ -1785,7 +1789,6 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     animation-delay: 3s;
 }
 
-/* حركة ناعمة مستمرة - نسخة خاصة بالـ Quote */
 @keyframes floatSquaresQuote {
     0%, 100% {
         transform: translateY(0);
@@ -1797,7 +1800,6 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     }
 }
 
-/* Fade In Up Animation - نسخة خاصة بالـ Quote */
 @keyframes fadeInUpQuote {
     from {
         transform: translateY(30px);
@@ -1809,33 +1811,36 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
     }
 }
 
-/* === [تعديلات العنوان في الشركاء] === */
-.section-title .em { font-weight: 700; }
-.partners .section-title { font-weight: 400; }     /* تأكيد على سكشن الشركاء */
+/* ======= Partners title tweak: bold only for the span ======= */
+.partners .section-title { font-weight: 400 !important; }
+.partners .section-title .em { font-weight: 800 !important; }
+/* Partners title: bold only for "Scientific & Tech" */
+.partners [data-translate-key="partners_title"]{ font-weight:400 !important; }
+.partners [data-translate-key="partners_title"] .em{ font-weight:800 !important; }
 
-/* === [أيقونات كروت إنسايت] === */
+
+/* === Insight cards icons === */
 .info-card { position: relative; padding-top: 3.2rem; }
 .info-card .card-icon{
   position:absolute; top:10px; left:20px;
   width:36px; height:36px; display:grid; place-items:center;
-  border-radius:10px; 
+  border-radius:10px;
   background:linear-gradient(180deg,#EEF2FF,#E0E7FF);
   color:#6366F1; font-size:18px;
 }
 
-/* اللون في السكشن even (مطابقة للباقة البنفسجي) */
 .service-item.service-even .info-card .card-icon{
   background:linear-gradient(180deg,#F3E8FF,#EDE9FE);
   color:#7C3AED;
 }
 
-/* === [خلفية بيضاء لصورة إنسايت] === */
+/* === Ensure white background for Insight image === */
 .service-visual img.img-white{
   background:#fff; border-radius:16px; padding:8px;
   box-shadow: var(--shadow-lg);
 }
 
-/* === [أكشن: 399×399 وخلفية أبيض] === */
+/* === Action image: 399x399 & white bg === */
 .service-visual img.img-square-399{
   width: min(399px, 100%);
   aspect-ratio: 1 / 1;
@@ -1847,19 +1852,3 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
   display:block;
   margin-inline:auto;
 }
-
-/* === [ألوان أزرار الخدمات قابلة للتحكم] === */
-/* استخدم المتغيرات على العنصر .service-item (inline style أو كلاس) */
-.btn-service{
-  background: var(--service-cta-bg, var(--accent-color));
-  color: var(--service-cta-text, #fff);
-  padding: 18px 32px; font-weight: 600; border-radius: var(--radius-sm); display: inline-block;
-  transition: var(--transition);
-}
-.btn-service:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-  background: var(--service-cta-hover, #2563eb);
-}
-
-/* === [تحسين طفيف لشكل عنوان الشركاء الأصلي] === */

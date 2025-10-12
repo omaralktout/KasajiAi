@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_subtitle:"Improving patient experience is not an option—it's a human responsibility. We listen, monitor, and transform every voice into better care",
       hero_btn_signup:"Sign up", hero_btn_demo:"Watch Demo",
 
-      partners_title:"Trusted Scientific & Tech Partners",
+      partners_title:"Trusted <span class='em'>Scientific &amp; Tech</span> Partners",
       partners_subtitle:"World-class expertise and cutting-edge technologies",
 
       services_title:"Our Core Services",
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_subtitle:"تحسين تجربة المريض ليس خيارًا، بل هو مسؤولية إنسانية. نحن نستمع ونراقب ونحوّل كل صوت إلى رعاية أفضل.",
       hero_btn_signup:"سجل الآن", hero_btn_demo:"شاهد العرض",
 
-      partners_title:"شركاء علميون وتقنيون موثوقون",
+      partners_title:"شركاء <span class='em'>علميون و تقنيون</span> موثوقون",
       partners_subtitle:"خبرة عالمية المستوى وتقنيات متطورة",
 
       services_title:"خدماتنا الأساسية",
