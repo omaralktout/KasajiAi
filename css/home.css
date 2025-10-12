@@ -1840,15 +1840,16 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
   box-shadow: var(--shadow-lg);
 }
 
-/* === Action image: 399x399 & white bg === */
-.service-visual img.img-square-399{
-  width: min(399px, 100%);
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  background:#fff;
-  border-radius:16px;
-  padding:8px;
-  box-shadow: var(--shadow-lg);
-  display:block;
-  margin-inline:auto;
+/* Force square 399x399 white background for Action image */
+.img-square-399 {
+  width: 399px !important;
+  height: 399px !important;
+  object-fit: contain !important;
+  background: #fff !important;
+  border-radius: 16px;
+  padding: 8px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
+
