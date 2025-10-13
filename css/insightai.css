@@ -314,7 +314,8 @@ nav {
   height: 115%;
   width: auto;
   object-fit: contain;
-  transform: translateY(15px); /* 🔽 نزول بسيط للصورة */
+  transform: translateY(15px);
+  /* 🔽 نزول بسيط للصورة */
   transition: transform .5s;
 }
 
@@ -324,13 +325,27 @@ nav {
 
 /* الأنيميشن */
 @keyframes fadeInUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
-  from { transform: scale(.9); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* مربعات الزخرفة */
@@ -343,16 +358,65 @@ nav {
   z-index: 3;
 }
 
-.text-square-1 { inline-size: 36px; block-size: 36px; inset-block-start: -40px; inset-inline-start: -50px; animation-delay: 0s; }
-.text-square-2 { inline-size: 20px; block-size: 20px; inset-block-start: 60px; inset-inline-start: -70px; animation-delay: 1s; }
-.text-square-3 { inline-size: 28px; block-size: 28px; inset-block-end: 110px; inset-inline-end: -60px; animation-delay: 2s; }
-.text-square-4 { inline-size: 12px; block-size: 12px; inset-block-end: 40px; inset-inline-end: -30px; animation-delay: 3s; }
-.text-square-5 { inline-size: 18px; block-size: 18px; inset-block-start: 24px; inset-inline-end: 40px; animation-delay: 4s; }
-.text-square-6 { inline-size: 26px; block-size: 26px; inset-block-end: -40px; inset-inline: 50% auto; transform: translateX(-50%); animation-delay: 2.5s; }
+.text-square-1 {
+  inline-size: 36px;
+  block-size: 36px;
+  inset-block-start: -40px;
+  inset-inline-start: -50px;
+  animation-delay: 0s;
+}
+
+.text-square-2 {
+  inline-size: 20px;
+  block-size: 20px;
+  inset-block-start: 60px;
+  inset-inline-start: -70px;
+  animation-delay: 1s;
+}
+
+.text-square-3 {
+  inline-size: 28px;
+  block-size: 28px;
+  inset-block-end: 110px;
+  inset-inline-end: -60px;
+  animation-delay: 2s;
+}
+
+.text-square-4 {
+  inline-size: 12px;
+  block-size: 12px;
+  inset-block-end: 40px;
+  inset-inline-end: -30px;
+  animation-delay: 3s;
+}
+
+.text-square-5 {
+  inline-size: 18px;
+  block-size: 18px;
+  inset-block-start: 24px;
+  inset-inline-end: 40px;
+  animation-delay: 4s;
+}
+
+.text-square-6 {
+  inline-size: 26px;
+  block-size: 26px;
+  inset-block-end: -40px;
+  inset-inline: 50% auto;
+  transform: translateX(-50%);
+  animation-delay: 2.5s;
+}
 
 @keyframes floatSquaresHero {
-  0%, 100% { transform: translateY(0); opacity: .8; }
-  50% { transform: translateY(-10px); opacity: .8; }
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .8;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: .8;
+  }
 }
 
 /* ===== Responsive tweaks ===== */
@@ -360,14 +424,18 @@ nav {
   .hero {
     padding-block: 24px;
   }
+
   .hero-content {
     flex-direction: column;
-    height: auto; /* خليه مرن */
+    height: auto;
+    /* خليه مرن */
   }
+
   .hero-image img {
     height: auto;
     max-height: 220px;
-    transform: translateY(0); /* رجعها طبيعي */
+    transform: translateY(0);
+    /* رجعها طبيعي */
   }
 }
 
@@ -375,6 +443,7 @@ nav {
   .hero {
     padding-block: 20px;
   }
+
   .hero-image img {
     max-height: 200px;
     transform: translateY(0);
@@ -604,7 +673,8 @@ html[dir="rtl"] .text-square-5 {
   padding: 48px;
   color: #fff;
   margin-bottom: 56px;
-  text-align: left;            /* بدل center */
+  text-align: left;
+  /* بدل center */
   opacity: 0;
   transform: translateY(24px);
   animation: fadeInUp .7s ease-out .4s forwards;
@@ -617,6 +687,7 @@ html[dir="rtl"] .text-square-5 {
   justify-content: center;
   align-items: center;
 }
+
 .centered-section .section-image img {
   max-width: 100%;
   height: auto;
@@ -636,8 +707,9 @@ html[dir="rtl"] .text-square-5 {
   font-size: 34px;
   margin-bottom: 18px;
 }
+
 .centered-section .section-description {
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
   font-size: 19px;
   margin-bottom: 22px;
   line-height: 1.6;
@@ -649,20 +721,24 @@ html[dir="rtl"] .text-square-5 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;   /* عمودي */
+  flex-direction: column;
+  /* عمودي */
   gap: 12px;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 .centered-section .section-features li {
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, .1);
   padding: 12px 18px;
   border-radius: 8px;
   color: #fff;
   margin: 0;
   position: relative;
-  padding-inline-start: 28px; /* فراغ للنقطة */
+  padding-inline-start: 28px;
+  /* فراغ للنقطة */
 }
+
 .centered-section .section-features li::before {
   content: "";
   position: absolute;
@@ -671,7 +747,8 @@ html[dir="rtl"] .text-square-5 {
   transform: translateY(-50%);
   width: 7px;
   height: 7px;
-  background: #fff;         /* نفس اللون السابق */
+  background: #fff;
+  /* نفس اللون السابق */
   border-radius: 50%;
 }
 
@@ -681,32 +758,45 @@ html[dir="rtl"] .text-square-5 {
     flex-direction: column;
     text-align: center;
   }
-  .centered-section .section-text { text-align: center; }
-  .centered-section .section-features { align-items: center; }
+
+  .centered-section .section-text {
+    text-align: center;
+  }
+
+  .centered-section .section-features {
+    align-items: center;
+  }
 }
+
 /* ===== RTL for .centered-section (final, compact) ===== */
-html[dir="rtl"] .centered-section { 
+html[dir="rtl"] .centered-section {
   text-align: right;
 }
-html[dir="rtl"] .centered-section .section-text { 
+
+html[dir="rtl"] .centered-section .section-text {
   text-align: right;
 }
 
 /* قائمة الميزات */
 html[dir="rtl"] .centered-section .section-features {
-  display: block;           /* بدل flex */
+  display: block;
+  /* بدل flex */
   text-align: right;
-  direction: rtl;           /* يضمن اتجاه صحيح داخل القائمة */
+  direction: rtl;
+  /* يضمن اتجاه صحيح داخل القائمة */
 }
 
 /* كل عنصر: حجم حسب المحتوى + تباعد مضبوط */
 html[dir="rtl"] .centered-section .section-features li {
-  position: relative;       
-  display: inline-block;    /* بعرض المحتوى فقط */
+  position: relative;
+  display: inline-block;
+  /* بعرض المحتوى فقط */
   max-width: 100%;
-  margin: 0 0 12px 0;       /* مسافة بين العناصر */
+  margin: 0 0 12px 0;
+  /* مسافة بين العناصر */
   padding-inline-start: 18px;
-  padding-inline-end: 55px; /* مسافة مريحة بين النقطة والنص */
+  padding-inline-end: 55px;
+  /* مسافة مريحة بين النقطة والنص */
   text-align: right;
   vertical-align: top;
 }
@@ -717,7 +807,8 @@ html[dir="rtl"] .centered-section .section-features li::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  inset-inline-end: 22px;   /* يمين العنصر */
+  inset-inline-end: 22px;
+  /* يمين العنصر */
   width: 8px;
   height: 8px;
   background: #fff;
@@ -1042,13 +1133,33 @@ footer.animate .copyright {
 }
 
 /* أبعد النص عن النقطة (RTL فقط) بقوة أعلى */
-html[dir="rtl"] .centered-section .section-features li{
-  padding-inline-end: 50px !important;  /* المسافة بين النقطة والنص */
-  padding-right: 40px !important;       /* fallback لو المتصفح ما يحترم inline-end */
+html[dir="rtl"] .centered-section .section-features li {
+  padding-inline-end: 50px !important;
+  /* المسافة بين النقطة والنص */
+  padding-right: 40px !important;
+  /* fallback لو المتصفح ما يحترم inline-end */
 }
 
 /* أبعد النقطة نفسها عن حافة الصندوق */
-html[dir="rtl"] .centered-section .section-features li::before{
-  inset-inline-end: 22px !important;    /* المسافة من الحافة اليمنى */
-  right: 22px !important;               /* fallback */
+html[dir="rtl"] .centered-section .section-features li::before {
+  inset-inline-end: 22px !important;
+  /* المسافة من الحافة اليمنى */
+  right: 22px !important;
+  /* fallback */
+}
+/* Mobile stack: always text first, image second */
+@media (max-width: 992px) {
+  /* كل الأقسام العادية */
+  .section-content {
+    flex-direction: column !important;   /* إلغاء أي row/row-reverse */
+  }
+  .section-content .section-text  { order: 1 !important; }
+  .section-content .section-image { order: 2 !important; }
+
+  /* البلوك الأزرق (centered-section) */
+  .centered-section {
+    flex-direction: column !important;   /* تأكيد */
+  }
+  .centered-section .section-text  { order: 1 !important; }
+  .centered-section .section-image { order: 2 !important; }
 }
