@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   why_tech_point3:"لا يملكون فرق دعم متخصصة في الرعاية الصحية",
   why_tech_point4:"حلولهم تحركها التقنية… لا الإنسان",
 
-  "contact-title":"Ready to Transform Your Business?",
+  "contact-title":"?Ready to Transform Your Business",
   "contact-subtitle":"ابدأ اليوم واكتشف الأثر الحقيقي الذي يمكن لمنصتنا أن تصنعه.",
   "contact-info-title":"معلومات التواصل",
   "contact-phone":"الهاتف",

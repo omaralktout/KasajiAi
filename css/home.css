@@ -1853,3 +1853,53 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== RTL: خَلّي علامة ✓/✗ على اليمين والنص جنبها ===== */
+html[dir="rtl"] .comparison-card ul {
+  direction: rtl;          /* القايمة عربي */
+  text-align: right;       /* محاذاة يمين */
+}
+
+html[dir="rtl"] .comparison-card li {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;     /* ترتيب عادي، لأننا رح نثبّت الأيقونة يدويًا */
+  gap: .5rem;
+}
+
+/* أهم جزء: ثبّت الأيقونة على اليمين مهما كانت القواعد القديمة */
+html[dir="rtl"] .comparison-card li::before {
+  position: static !important;      /* ألغِ أي تموضع absolute/relative سابق */
+  display: inline-block;
+  /* منطقياً: خليها تظهر كبداية السطر (يمين في RTL) */
+  order: -1;                         /* يسبق النصّ داخل الـflex */
+  margin-inline-start: .25rem;       /* مسافة صغيرة بعد الأيقونة */
+  margin-inline-end: 0;
+  /* في حال كان فيه left/right قديم: */
+  left: auto !important;
+  right: auto !important;
+  float: none !important;
+}
+
+/* لو فيه كارد مميّز (الخانة الوسطى) وبتحس مسافتها مختلفة، نزبط نفس الشي */
+html[dir="rtl"] .comparison-card.featured li::before {
+  position: static !important;
+  order: -1;
+  margin-inline-start: .25rem;
+  margin-inline-end: 0;
+}
+/* خلي الكرت المميّز مرجع للتموضع */
+.comparison-card.featured {
+  position: relative;
+}
+
+/* وسّط شارة BEST فوق الكرت تمامًا */
+.comparison-card.featured .featured-badge {
+  position: absolute !important;
+  top: -12px;               /* عدّلها إذا بدك أعلى/أدنى */
+  left: 50% !important;     /* نقطة المنتصف أفقياً */
+  right: auto !important;
+  transform: translateX(-50%) !important;  /* مركز الشارة عند المنتصف */
+  margin: 0 !important;
+  float: none !important;   /* إلغاء أي فلوت قديم */
+  z-index: 1;               /* تبقى فوق حدود الكرت */
+}
