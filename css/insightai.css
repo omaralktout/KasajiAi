@@ -593,49 +593,142 @@ html[dir="rtl"] .text-square-5 {
 }
 
 /* Centered Section */
+/* Centered Section — Side-by-side (image left, text right) */
 .centered-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
   background: var(--blue-gradient);
   border-radius: 16px;
   padding: 48px;
-  text-align: center;
   color: #fff;
   margin-bottom: 56px;
+  text-align: left;            /* بدل center */
   opacity: 0;
   transform: translateY(24px);
-  animation: fadeInUp .7s ease-out .4s forwards
+  animation: fadeInUp .7s ease-out .4s forwards;
 }
 
+/* الصورة على اليسار */
+.centered-section .section-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centered-section .section-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* كتلة النص على اليمين (نستخدم الكلاس الموجود عندك) */
+.centered-section .section-text {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* العناوين والوصف */
 .centered-section .section-title {
   color: #fff;
   font-size: 34px;
-  margin-bottom: 18px
+  margin-bottom: 18px;
 }
-
 .centered-section .section-description {
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255,255,255,.9);
   font-size: 19px;
-  margin-bottom: 22px
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
+/* النقاط */
 .centered-section .section-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap
+  flex-direction: column;   /* عمودي */
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
 .centered-section .section-features li {
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255,255,255,.1);
   padding: 12px 18px;
   border-radius: 8px;
   color: #fff;
-  margin-bottom: 0;
-  padding-inline-start: 25px
+  margin: 0;
+  position: relative;
+  padding-inline-start: 28px; /* فراغ للنقطة */
+}
+.centered-section .section-features li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  background: #fff;         /* نفس اللون السابق */
+  border-radius: 50%;
 }
 
-.centered-section .section-features li::before {
-  background: #fff
+/* Responsive */
+@media (max-width: 900px) {
+  .centered-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .centered-section .section-text { text-align: center; }
+  .centered-section .section-features { align-items: center; }
 }
+/* ===== RTL for .centered-section (final, compact) ===== */
+html[dir="rtl"] .centered-section { 
+  text-align: right;
+}
+html[dir="rtl"] .centered-section .section-text { 
+  text-align: right;
+}
+
+/* قائمة الميزات */
+html[dir="rtl"] .centered-section .section-features {
+  display: block;           /* بدل flex */
+  text-align: right;
+  direction: rtl;           /* يضمن اتجاه صحيح داخل القائمة */
+}
+
+/* كل عنصر: حجم حسب المحتوى + تباعد مضبوط */
+html[dir="rtl"] .centered-section .section-features li {
+  position: relative;       
+  display: inline-block;    /* بعرض المحتوى فقط */
+  max-width: 100%;
+  margin: 0 0 12px 0;       /* مسافة بين العناصر */
+  padding-inline-start: 18px;
+  padding-inline-end: 55px; /* مسافة مريحة بين النقطة والنص */
+  text-align: right;
+  vertical-align: top;
+}
+
+/* النقطة: على يمين العنصر ومتمركزة عموديًا */
+html[dir="rtl"] .centered-section .section-features li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  inset-inline-end: 22px;   /* يمين العنصر */
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* آخر عنصر بدون مسافة زائدة */
+html[dir="rtl"] .centered-section .section-features li:last-child {
+  margin-bottom: 0;
+}
+
 
 /* Contact */
 .contact {
@@ -946,4 +1039,16 @@ footer.animate .copyright {
   .contact {
     padding-block: 50px
   }
+}
+
+/* أبعد النص عن النقطة (RTL فقط) بقوة أعلى */
+html[dir="rtl"] .centered-section .section-features li{
+  padding-inline-end: 50px !important;  /* المسافة بين النقطة والنص */
+  padding-right: 40px !important;       /* fallback لو المتصفح ما يحترم inline-end */
+}
+
+/* أبعد النقطة نفسها عن حافة الصندوق */
+html[dir="rtl"] .centered-section .section-features li::before{
+  inset-inline-end: 22px !important;    /* المسافة من الحافة اليمنى */
+  right: 22px !important;               /* fallback */
 }
