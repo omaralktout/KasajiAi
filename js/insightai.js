@@ -80,7 +80,7 @@ const translations = {
   "perspective-feature-3": "تحدد أولويات التحسين التي تحقق أعلى أثر على التجربة",
   "perspective-feature-4": "تدعم اتخاذ القرار بناءً على البيانات… وليس على الافتراضات",
   "perspective-desc": "طبقة ذكاء من الجيل التالي تحوّل الملاحظات إلى رؤية مستقبلية وإجراء.",
- "contact-title":"?Ready to Transform Your Business",
+ "contact-title":"هل أنت مستعد لتحويل عملك؟",
   "contact-subtitle":"ابدأ اليوم واكتشف الأثر الحقيقي الذي يمكن لمنصتنا أن تصنعه.",
   "contact-info-title":"معلومات التواصل",
   "contact-phone":"الهاتف",

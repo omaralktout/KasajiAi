@@ -8,45 +8,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/insightai.css">
+  <link rel="stylesheet" href="../css/nav.css">
+
    <meta name="robots" content="index, follow">
   <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
 
   <script defer src="../js/insightai.js"></script>
+    <script defer src="../js/nav.js"></script>
+
 
 </head>
 
-<body>
+<body data-page="insightai">
   <!-- Loader -->
   <div class="loader-container" id="loader">
     <div class="loader"></div>
   </div>
 
   <!-- Navbar -->
-  <div class="navbar">
-    <div class="container">
-      <nav>
-        <a href="../index.html" class="logo">
-          <img src="../images/Home/logo.webp" alt="Kasaji.AI Logo">
-        </a>
+<div class="navbar">
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="logo">
+        <img src="../images/Home/logo.webp" alt="Kasaji.AI Logo">
+      </a>
 
-        <ul class="nav-links">
-          <li><a href="voicepulse.html" data-translate="nav-voicepulse">VoicePulse</a></li>
-          <li><a href="insightai.html" data-translate="nav-insightai">InsightAI</a></li>
-          <li><a href="actionsync.html" data-translate="nav-actionsync">ActionSync</a></li>
-          <li><a href="insights.html" data-translate="nav-insights">Our Insights</a></li>
-          <li><a href="about.html" data-translate="nav-about">About Us</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="voicepulse.html" data-page="voicepulse" data-translate="nav-voicepulse">VoicePulse</a></li>
+        <li><a href="insightai.html"  data-page="insightai"  data-translate="nav-insightai">InsightAI</a></li>
+        <li><a href="actionsync.html"  data-page="actionsync"  data-translate="nav-actionsync">ActionSync</a></li>
+        <li><a href="insights.html"    data-page="insights"    data-translate="nav-insights">Our Insights</a></li>
+        <li><a href="about.html"       data-page="about"       data-translate="nav-about">About Us</a></li>
+      </ul>
 
-        <div class="nav-actions">
-          <button class="lang-switcher" type="button" onclick="toggleLanguage()" aria-label="Language">
-            <i class="fas fa-globe"></i>
-          </button>
-          <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
-          <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
-        </div>
-      </nav>
-    </div>
+      <div class="nav-actions">
+        <button class="lang-switcher" type="button" onclick="toggleLanguage()" aria-label="Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
+        <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
+      </div>
+    </nav>
   </div>
+</div>
 
   <!-- Hero -->
   <section class="hero">

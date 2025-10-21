@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   service3_card4_desc:"مزامنة الفرق ومسارات العمل بذكاء",
   service3_link:"ابدأ مع ActionSync",
 
-  how_title:" حيث يلتقي الذكاء الصناعي بذكاء البشر Kasaji AI",
+  how_title:" Kasaji AI حيث يلتقي الذكاء الصناعي بذكاء البشر ",
   how_subtitle:"نوفّر أدوات مدعومة بالذكاء الاصطناعي لقياس صوت العميل (VoC)، لتحويل تجارب المرضى والعملاء إلى أثر ملموس وقابل للقياس",
   how_step1_title:"الالتقاط",
   how_step1_desc:"نلتقط صوت المرضى والعملاء من كل نقطة تفاعل",
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   why_tech_point3:"لا يملكون فرق دعم متخصصة في الرعاية الصحية",
   why_tech_point4:"حلولهم تحركها التقنية… لا الإنسان",
 
-  "contact-title":"?Ready to Transform Your Business",
+  "contact-title":"هل أنت مستعد لتحويل عملك؟",
   "contact-subtitle":"ابدأ اليوم واكتشف الأثر الحقيقي الذي يمكن لمنصتنا أن تصنعه.",
   "contact-info-title":"معلومات التواصل",
   "contact-phone":"الهاتف",

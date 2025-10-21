@@ -134,7 +134,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: var(--light-purple);
       padding: 6px 12px;
       border-radius: 20px;
       cursor: pointer;
@@ -148,15 +147,16 @@
   }
 
   .sign-up-btn {
-      background: var(--primary-color);
+      background: #1E40AF;
       color: #fff;
       padding: 8px 16px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 400;
       position: relative;
       overflow: hidden;
-      transition: .3s
+      transition: .3s;
+      font-size: 15px;
   }
 
   .sign-up-btn::before {
@@ -203,15 +203,15 @@
   }
 
   .hero-title {
-      font-size: 40px;
-      font-weight: 700;
+      font-size: 80px;
+      font-weight: 500;
       color: var(--text-dark);
-      margin-bottom: 12px;
+      margin-bottom: 25px;
       line-height: 1.15
   }
 
   .hero-description {
-      font-size: 17px;
+      font-size: 20px;
       color: var(--text-gray);
       margin-bottom: 12px;
       line-height: 1.55
@@ -423,468 +423,194 @@
           bottom: -32px;
       }
   }
+/* ============ Timeline Base ============ */
+.timeline{
+  --pair-gap: 100px;            /* ← فراغ ثابت بين كل صفّين */
+  --pair-gap-mobile: 32px;     /* ← (تعليق) فراغ رأسي بين الصفوف على الموبايل */
+  --col-gap: 28px;
+
+  /* (تعليق) تحكم عام بحجم الصور الافتراضي */
+  --media-w: 60%;
+
+  /* (تعليق مهم) مسافة الصور عن العمود (السطر بالنص):
+     - اليمين: للصفوف اللي فيها الصورة يمين (leftCard = card يسار / media يمين)
+     - اليسار: للصفوف اللي فيها الصورة يسار (rightCard = card يمين / media يسار)
+     سالب = أقرب للعمود، موجب = أبعد */
+  --media-shift-right: 25px;   /* ← صورة اليمين */
+  --media-shift-left:  220px;  /* ← صورة اليسار */
+
+  /* (تعليق مهم) مسافة الكروت عن العمود بنفس منطق الصور:
+     - الكارد يمين (صفوف .leftCard): من --card-shift-right
+     - الكارد يسار (صفوف .rightCard): من --card-shift-left */
+  --card-shift-right: 30px;    /* ← كارد العمود اليمين */
+  --card-shift-left:  25px;    /* ← كارد العمود اليسار */
+
+  --media-radius: 16px;
+  --card-radius: 16px;
+  --shadow-card: 0 8px 30px rgba(0,0,0,.08);
+  --shadow-media: 0 8px 30px rgba(0,0,0,.06);
+  --text-dark: #0f172a;
+  --text-gray: #475569;
+  --gradient: linear-gradient(90deg,#6366f1,#8b5cf6);
+  --line: linear-gradient(180deg,#c4b5fd 0%, #93c5fd 50%, #5eead4 100%);
+  background:#f9fafc; padding:68px 0;
+}
+.tl-container{ width:min(1120px, 92vw); margin-inline:auto; }
+.tl-header{ text-align:center; margin-bottom:44px; }
+.tl-title{
+  font: 700 34px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color:var(--text-dark); display:inline-block; position:relative; margin:0 0 16px;
+}
+.tl-title::after{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-10px; width:72px; height:4px; background:var(--gradient); border-radius:2px;
+}
+.tl-subtitle{
+  margin:0 auto; max-width:760px; font: 400 18px/1.6 Inter, system-ui;
+  color:var(--text-gray);
+}
+
+/* ============ Grid wrapper + center line ============ */
+.tl-wrapper{ position:relative; }
+.tl-centerline{
+  position:absolute; inset-block:0; left:50%; transform:translateX(-50%);
+  width:3px; background:var(--line); border-radius:999px; opacity:.95;
+  box-shadow:0 0 0 2px rgba(0,0,0,0.02) inset;
+}
+
+/* ============ Row ============ */
+.tl-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;     /* عمودين متساويين */
+  align-items:center;                 /* الكارد والصورة نفس المستوى أفقيًا */
+  column-gap: var(--col-gap);
+  row-gap: 0;
+  margin-bottom: var(--pair-gap);     /* فراغ عمودي متساوٍ */
+
+  /* افتراضيات قابلة للتخصيص لكل صف (تقدر تغيّرها لكل #nodeX لو حبيت) */
+  --media-w-row: var(--media-w);
+
+  /* (تعليق) إعدادات الأنيميشن/الستاجر */
+  --delay: .00s;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
+}
+.tl-row.inview{
+  opacity: 1;
+  transform: none;
+}
+
+/* ترتيب الأعمدة */
+.tl-row.leftCard  > .tl-card { grid-column: 1; }
+.tl-row.leftCard  > .tl-media{ grid-column: 2; }
+.tl-row.rightCard > .tl-media{ grid-column: 1; }
+.tl-row.rightCard > .tl-card { grid-column: 2; }
+
+/* ============ Card ============ */
+.tl-card{
+  background:#fff;
+  border-radius: var(--card-radius);
+  padding:24px;
+  box-shadow: var(--shadow-card);
+  /* (تعليق) ستاجر: الكارد يظهر بعد الصورة بقليل */
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
+  transition-delay: calc(var(--delay, .00s) + .12s);
+}
+.tl-row.inview .tl-card{ opacity:1; transform:none; }
+
+.tl-icon{
+  width:52px; height:52px; border-radius:12px; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:21px;
+  margin-bottom:12px; background: var(--theme-gradient, linear-gradient(90deg,#8B5CF6,#C084FC));
+}
+.tl-card-title{
+  margin:0 0 10px; color:var(--text-dark);
+  font:600 22px/1.35 Inter, system-ui;
+}
+.tl-card-desc{
+  margin:0 0 14px; color:var(--text-gray);
+  font:400 15.5px/1.6 Inter, system-ui;
+}
+.tl-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+.tl-tag{
+  padding:6px 10px; border-radius:20px; font:500 13.5px/1 Inter, system-ui;
+  background: var(--tag-bg,#F3E8FF); color: var(--tag-color,#6D28D9);
+}
+
+/* ============ Media ============ */
+.tl-media{
+  border-radius: var(--media-radius);
+  overflow:hidden; background:#E5E7EB; box-shadow: var(--shadow-media);
+  aspect-ratio: 16 / 10;               /* نسبة ثابتة */
+  width: var(--media-w-row);           /* ← حجم الصورة (تقدر تغيره على #nodeX) */
+  /* (تعليق) ستاجر: الصورة تظهر أولاً */
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--delay, .00s);
+}
+.tl-row.inview .tl-media{ opacity:1; transform:none; }
+
+/* (تعليق مهم) تمركز الصورة وقربها/بعدها من العمود من متغيّرين موحّدين:
+   --media-shift-right لصور اليمين  |  --media-shift-left لصور اليسار */
+.tl-row.leftCard  .tl-media{ justify-self:start; margin-inline-start: var(--media-shift-right); }
+.tl-row.rightCard .tl-media{ justify-self:end;   margin-inline-end:   var(--media-shift-left); }
+
+/* (تعليق مهم) تمركز الكارد وقربه/بعده من العمود من متغيّرين موحّدين:
+   --card-shift-right لكروت العمود اليمين | --card-shift-left لكروت العمود اليسار */
+.tl-row.leftCard  .tl-card{ justify-self:end;   margin-inline-end:   var(--card-shift-right); }
+.tl-row.rightCard .tl-card{ justify-self:start; margin-inline-start: var(--card-shift-left); }
+
+.tl-media > img{
+  width:100%; height:100%; object-fit:cover; display:block; opacity:.9;
+  transition:opacity .25s ease;
+}
+.tl-media:hover > img{ opacity:1; }
+
+/* ============ Themes ============ */
+.theme-amber { --theme-gradient:linear-gradient(90deg,#f59e0b 0%, #fbbf24 100%); --tag-bg:#FFF7E6; --tag-color:#b45309; }
+.theme-purple{ --theme-gradient:linear-gradient(90deg,#8B5CF6 0%, #C084FC 100%); --tag-bg:#F3E8FF; --tag-color:#6D28D9; }
+.theme-teal  { --theme-gradient:linear-gradient(90deg,#14b8a6 0%, #2dd4bf 100%); --tag-bg:#E6FFFB; --tag-color:#0f766e; }
+.theme-rose  { --theme-gradient:linear-gradient(90deg,#60A5FA 0%, #818CF8 100%); --tag-bg:#E0E7FF; --tag-color:#1D4ED8; }
+.theme-slate { --theme-gradient:linear-gradient(90deg,#818CF8 0%, #C084FC 100%); --tag-bg:#E0E7FF; --tag-color:#7E22CE; }
+
+/* ============ Responsive ============ */
+@media (max-width: 900px){
+  /* Grid: عمود واحد وتوسيط عام */
+  .timeline .tl-row{
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    row-gap: 12px;
+    margin-bottom: var(--pair-gap-mobile);
+    /* صفر أي إزاحات عالموبايل */
+    --media-shift-left: 0;
+    --media-shift-right: 0;
+    --card-shift-left: 0;
+    --card-shift-right: 0;
+  }
+
+  /* اخفي خط النص والصور */
+  .timeline .tl-centerline{ display:none !important; }
+  .timeline .tl-media{ display:none !important; }
+
+  /* الكارد يأخذ العمود الوحيد ويتوسّط */
+  .timeline .tl-row > .tl-card{
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: min(620px, 92vw);
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
+
+  /* ألغِ أي هوامش اتجاهية موروثة */
+  .timeline .tl-row.leftCard  .tl-card,
+  .timeline .tl-row.rightCard .tl-card{
+    margin-inline-start: 0 !important;
+    margin-inline-end:   0 !important;
+  }
+}
 
-
-  /* ================= Timeline ================= */
-  .timeline {
-      background: #f9fafc;
-      padding: 68px 0
-  }
-
-  .timeline-header {
-      text-align: center;
-      margin-bottom: 44px
-  }
-
-  .content-title {
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 16px;
-      position: relative;
-      display: inline-block
-  }
-
-  .content-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 72px;
-      height: 4px;
-      background: var(--gradient);
-      border-radius: 2px
-  }
-
-  .content-subtitle {
-      font-size: 18px;
-      color: var(--text-gray);
-      max-width: 700px;
-      margin: 0 auto
-  }
-
-  .timeline-wrapper {
-      position: relative
-  }
-
-  .timeline-line {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 100%;
-      background: var(--line-gradient);
-      box-shadow: var(--line-glow);
-      border-radius: 999px;
-      opacity: .95
-  }
-
-  .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(340px, 1fr) minmax(340px, 1fr);
-      column-gap: 28px;
-      row-gap: 16px;
-      align-items: start;
-      margin-bottom: 64px;
-      opacity: 0;
-      transform: translateY(26px);
-      --theme-gradient: linear-gradient(90deg, #8B5CF6 0%, #C084FC 100%);
-      --tag-bg: #F3E8FF;
-      --tag-color: #6D28D9;
-      --card-shadow: 0 8px 30px rgba(139, 92, 246, .1);
-  }
-
-  /* Alternating sides */
-  .timeline-item.side-right .node-media {
-      grid-column: 1
-  }
-
-  .timeline-item.side-right .node-copy {
-      grid-column: 2;
-      margin-left: var(--center-gap)
-  }
-
-  .timeline-item.side-left .node-media {
-      grid-column: 2
-  }
-
-  .timeline-item.side-left .node-copy {
-      grid-column: 1;
-      margin-right: var(--center-gap)
-  }
-
-  /* Card (copy) */
-  .node-copy {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--card-shadow);
-      transition: transform .25s ease, box-shadow .25s ease, opacity .55s var(--ease), transform .55s var(--ease);
-      opacity: 0;
-      transform: translateY(18px);
-  }
-
-  .node-copy:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, .1)
-  }
-
-  .node-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: var(--theme-gradient);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-      margin-bottom: 12px
-  }
-
-  .node-title {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 10px
-  }
-
-  .node-description {
-      font-size: 15.5px;
-      color: var(--text-gray);
-      margin-bottom: 14px;
-      line-height: 1.6
-  }
-
-  .node-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px
-  }
-
-  .node-tag {
-      background: var(--tag-bg);
-      color: var(--tag-color);
-      padding: 6px 10px;
-      border-radius: 20px;
-      font-size: 13.5px;
-      font-weight: 500
-  }
-
-  /* Media (image) */
-  .node-media {
-      position: relative;
-      width: 50%;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #E5E7EB;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
-      justify-self: start;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .55s var(--ease), transform .55s var(--ease);
-  }
-
-  .node-media::before {
-      content: "";
-      display: block;
-      aspect-ratio: 16/10;
-      max-height: 320px;
-      width: 100%
-  }
-
-  .node-media img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: .88;
-      transition: opacity .35s ease
-  }
-
-  .node-media:hover img {
-      opacity: 1
-  }
-
-  /* ===== Scroll Reveal ===== */
-  .timeline-item.inview {
-      opacity: 1;
-      transform: none;
-      transition: opacity .55s var(--ease), transform .55s var(--ease)
-  }
-
-  .timeline-item.inview .node-media,
-  .timeline-item.inview .node-copy {
-      opacity: 1;
-      transform: none
-  }
-
-  /* ================= THEME CLASSES ================= */
-  .theme-purple {
-      --theme-gradient: linear-gradient(90deg, #8B5CF6 0%, #C084FC 100%);
-      --tag-bg: #F3E8FF;
-      --tag-color: #6D28D9;
-      --card-shadow: 0 8px 30px rgba(139, 92, 246, .1)
-  }
-
-  .theme-teal {
-      --theme-gradient: linear-gradient(90deg, #14b8a6 0%, #2dd4bf 100%);
-      --tag-bg: #E6FFFB;
-      --tag-color: #0f766e;
-      --card-shadow: 0 8px 30px rgba(20, 184, 166, .1)
-  }
-
-  .theme-amber {
-      --theme-gradient: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
-      --tag-bg: #FFF7E6;
-      --tag-color: #b45309;
-      --card-shadow: 0 8px 30px rgba(245, 158, 11, .12)
-  }
-
-  .theme-rose {
-      --theme-gradient: linear-gradient(90deg, #12b0e5 0%, #71d8fb 100%);
-      --tag-bg: #f3ccfb;
-      --tag-color: #c70fd4;
-      --card-shadow: 0 8px 30px rgba(244, 63, 94, .12)
-  }
-
-  .theme-slate {
-      --theme-gradient: linear-gradient(90deg, #64748b 0%, #94a3b8 100%);
-      --tag-bg: #E5E7EB;
-      --tag-color: #1f2937;
-      --card-shadow: 0 8px 30px rgba(15, 23, 42, .12)
-  }
-
-  /* =========================================================
-       ============   تحكّم مستقل لكل كارد/صورة   =============
-       عندك 10 كلاسات بالضبط: card-1..5  و  media-1..5
-       غيّر القيم تحت زي ما بدك لكل عنصر لوحده
-       ========================================================= */
-
-  /* ======= الصور ======= */
-  /* ملاحظات:
-       - width: نسبة عرض الصورة
-       - aspect-ratio / max-height: أبعاد الصورة
-       - margin-top: رفع/تنزيل الصورة
-       - قرب/بعد من العمود: نستعمل margin-inline-start للييمين (side-left)
-                              و margin-inline-end لليسار (side-right)
-    */
-
-  /* media-1 */
-  .media-1 {
-      width: 60%
-  }
-
-  .media-1::before {
-      aspect-ratio: 16/9;
-      max-height: 340px
-  }
-
-  .media-1 {
-      margin-top: 70px
-  }
-
-  .timeline-item.side-left .media-1 {
-      margin-inline-start: -12px
-  }
-
-  /* الصورة يمين (قرب من العمود) */
-  .timeline-item.side-right .media-1 {
-      margin-inline-end: -12px
-  }
-
-  /* الصورة يسار (قرب من العمود) */
-  .media-1 {
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .08)
-  }
-
-  /* media-2 */
-  .media-2 {
-      width: 50%
-  }
-
-  .media-2::before {
-      aspect-ratio: 4/3;
-      max-height: 360px
-  }
-
-  .media-2 {
-      margin-top: 100px
-  }
-
-  .timeline-item.side-left .media-2 {
-      margin-inline-start: 35px
-  }
-
-  .timeline-item.side-right .media-2 {
-      margin-inline-end: -14px
-  }
-
-  .media-2 {
-      border-radius: 20px;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, .12)
-  }
-
-  /* media-3 */
-  .media-3 {
-      width: 60%
-  }
-
-  .media-3::before {
-      aspect-ratio: 16/9;
-      max-height: 340px
-  }
-
-  .media-3 {
-      margin-top: 120px
-  }
-
-  .timeline-item.side-left .media-3 {
-      margin-inline-start: -10px
-  }
-
-  .timeline-item.side-right .media-3 {
-      margin-inline-end: -10px
-  }
-
-  .media-3 {
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .08)
-  }
-
-  /* media-4 */
-  .media-4 {
-      width: 50%
-  }
-
-  .media-4::before {
-      aspect-ratio: 4/3;
-      max-height: 360px
-  }
-
-  .media-4 {
-      margin-top: 20px
-  }
-
-  .timeline-item.side-left .media-4 {
-      margin-inline-start: 40px
-  }
-
-  .timeline-item.side-right .media-4 {
-      margin-inline-end: -12px
-  }
-
-  .media-4 {
-      border-radius: 20px;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, .12)
-  }
-
-  /* media-5 */
-  .media-5 {
-      width: 60%
-  }
-
-  .media-5::before {
-      aspect-ratio: 16/9;
-      max-height: 340px
-  }
-
-  .media-5 {
-      margin-top: 18px
-  }
-
-  .timeline-item.side-left .media-5 {
-      margin-inline-start: -12px
-  }
-
-  .timeline-item.side-right .media-5 {
-      margin-inline-end: -12px
-  }
-
-  .media-5 {
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .08)
-  }
-
-  /* ======= الكروت (النص) ======= */
-  /* ملاحظات:
-       - margin-top: رفع/تنزيل الكارد
-       - ممكن تغيّر الظل/الألوان عبر الثيمات + هنا لكل كارد
-    */
-
-  .card-1 {
-      margin-top: 25px
-  }
-
-  .card-1 .node-icon {
-      background: linear-gradient(90deg, #ffa813 0%, #f3c05a 100%)
-  }
-
-  .card-2 {
-      margin-top: -230px
-  }
-
-  .card-2 .node-icon {
-      background: linear-gradient(90deg, #8B5CF6 0%, #C084FC 100%)
-  }
-
-  .card-3 {
-      margin-top: 100px
-  }
-
-  .card-3 .node-icon {
-      background: linear-gradient(90deg, #29D4CF 0%, #4ff6c4 100%)
-  }
-
-  .card-4 {
-      margin-top: -250px
-  }
-
-  .card-4 .node-icon {
-      background: linear-gradient(90deg, #de28cf 0%, #fe79f3 100%)
-  }
-
-  .card-5 {
-      margin-top: 10px
-  }
-
-  .card-5 .node-icon {
-      background: linear-gradient(90deg, #8B5CF6 0%, #C084FC 100%)
-  }
-
-  /* ======= ستاجر/تأخير الحركة لكل نود ======= */
-  #node1 {
-      --delay: .00s
-  }
-
-  #node2 {
-      --delay: .08s
-  }
-
-  #node3 {
-      --delay: .16s
-  }
-
-  #node4 {
-      --delay: .24s
-  }
-
-  #node5 {
-      --delay: .32s
-  }
-
-  .timeline-item .node-media {
-      transition-delay: var(--delay, .05s)
-  }
-
-  .timeline-item .node-copy {
-      transition-delay: calc(var(--delay, .05s) + .12s)
-  }
 
   /* ================= Contact & Footer ================= */
   .contact {
@@ -1179,3 +905,21 @@
           padding: 22px
       }
   }
+
+  /* Active link in navbar */
+.nav-links a {
+  position: relative;
+  transition: color .2s ease;
+}
+.nav-links a.is-active {
+  color: #6c4df6; /* بنفسجي خفيف */
+}
+.nav-links a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -6px;
+  height: 3px;
+  background: linear-gradient(90deg,#6c4df6,#9b8cff);
+  border-radius: 999px;
+}

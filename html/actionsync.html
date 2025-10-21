@@ -11,13 +11,11 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/actionsync.css" />
-     <meta name="robots" content="index, follow">
-  <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
 
     <script defer src="../js/actionsync.js"></script>
-
-
-
+    
 </head>
 
 <body>
@@ -61,7 +59,8 @@
                     <div class="text-decorative-square text-square-6"></div>
                     <h1 class="hero-title" data-translate="hero-title-actionsync">ActionSync</h1>
                     <p class="hero-description" data-translate="hero-description-actionsync">
-                        A real-time execution layer powered by AI to turn insights into immediate actions across the
+                        A real-time execution layer powered by AI<br> to turn insights into immediate actions<br> across
+                        the
                         care journey.
                     </p>
                 </div>
@@ -71,119 +70,137 @@
             </div>
         </div>
     </section>
-
-    <!-- Timeline -->
+    <!-- ===================== TIMELINE (from scratch) ===================== -->
     <section class="timeline" aria-label="Five Execution Nodes">
-        <div class="container">
-            <div class="timeline-header">
-                <h2 class="content-title" data-translate="content-title">Five Execution Nodes</h2>
-                <p class="content-subtitle" data-translate="content-subtitle">
-                    Use AI-generated suggestions to guide decision-making and strategy adjustments
+        <div class="tl-container">
+
+            <header class="tl-header">
+                <h2 class="tl-title" data-translate="content-title" data-translate-target=".i18n">
+                    <span class="i18n">Five Execution Nodes: Powering Real-Time<br> Patient Experience
+                        Transformation</span>
+                </h2>
+
+                <p class="tl-subtitle" data-translate="content-subtitle" data-translate-target=".i18n">
+                    <span class="i18n">
+                        Unlock the full potential of patient experience with our intelligent action<br>
+                        layer—driven by AI and designed to deliver immediate, meaningful impact<br>
+                        across every touchpoint in the care journey
+                    </span>
                 </p>
-            </div>
+            </header>
 
-            <div class="timeline-wrapper">
-                <span class="timeline-line" aria-hidden="true"></span>
-                <!-- 1) صورة يسار (side-right): media-1 + card-1 -->
-                <article id="node1" class="timeline-item side-right theme-amber">
-                    <div class="node-media media-1">
-                        <img src="../images/New folder/1.jpg" alt="Proactive Patient Outreach Illustration" />
-                    </div>
-                    <div class="node-copy card-1">
-                        <div class="node-icon"><i class="fas fa-user-check"></i></div>
-                        <h3 class="node-title" data-translate="node-1-title">Proactive Patient Outreach & Complaint
-                            Resolution</h3>
-                        <p class="node-description" data-translate="node-1-desc">
+            <div class="tl-wrapper">
+                <span class="tl-centerline" aria-hidden="true"></span>
+
+                <!-- row 1: card left / media right -->
+                <article id="node1" class="tl-row leftCard theme-amber">
+                    <div class="tl-card">
+                        <div class="tl-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="tl-card-title" data-translate="node-1-title">
+                            Proactive Patient Outreach &<br> Complaint Resolution
+                        </h3>
+                        <p class="tl-card-desc" data-translate="node-1-desc">
                             Preemptive intervention reduces escalation and transforms potential complaints into
-                            opportunities for increased trust and satisfaction.
+                            opportunities for increased trust and satisfaction.<br> Anticipate patient concerns before they
+                            escalate. Our system identifies early signals of dissatisfaction and initiates timely
+                            outreach, turning potential complaints into moments of empathy, trust-building, and loyalty.
                         </p>
-                        <div class="node-tags">
-                            <span class="node-tag" data-translate="node-1-tag-1">Alert Automation</span>
-                            <span class="node-tag" data-translate="node-1-tag-2">Patient Interaction</span>
+                        <div class="tl-tags">
+                            <span class="tl-tag" data-translate="node-1-tag-1">Alert Automation</span>
+                            <span class="tl-tag" data-translate="node-1-tag-2">Patient Interaction</span>
+                        </div>
+                    </div>
+                    <div class="tl-media">
+                        <img src="../images/New folder/1.jpg" alt="Proactive Patient Outreach Illustration">
+                    </div>
+                </article>
+
+                <!-- row 2: card right / media left -->
+                <article id="node2" class="tl-row rightCard theme-purple">
+                    <div class="tl-media">
+                        <img src="../images/New folder/2.jpg" alt="Experience-Driven Care Recommendations Illustration">
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-icon"><i class="fas fa-route"></i></div>
+                        <h3 class="tl-card-title" data-translate="node-2-title">Experience-Driven Care Recommendations
+                        </h3>
+                        <p class="tl-card-desc" data-translate="node-2-desc">
+                            Transform experience insights into actionable clinical and operational decisions. Whether
+                            it’s adjusting care plans or refining service delivery, our platform ensures that every
+                            recommendation enhances quality and responsiveness in real time.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tl-tag" data-translate="node-2-tag-1">Clinical Intelligence</span>
+                            <span class="tl-tag" data-translate="node-2-tag-2">Care Optimization</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- 2) صورة يمين (side-left): media-2 + card-2 -->
-                <article id="node2" class="timeline-item side-left theme-purple">
-                    <div class="node-media media-2">
-                        <img src="../images/New folder/2.jpg"
-                            alt="Experience-Driven Care Recommendations Illustration" />
-                    </div>
-                    <div class="node-copy card-2">
-                        <div class="node-icon"><i class="fas fa-heartbeat"></i></div>
-                        <h3 class="node-title" data-translate="node-2-title">Experience-Driven Care Recommendations</h3>
-                        <p class="node-description" data-translate="node-2-desc">
-                            Experience insights are instantly translated into operational or clinical decisions that
-                            enhance care quality in real time.
+                <!-- row 3: card left / media right -->
+                <article id="node3" class="tl-row leftCard theme-teal">
+                    <div class="tl-card">
+                        <div class="tl-icon"><i class="fa-solid fa-comments"></i></div>
+                        <h3 class="tl-card-title" data-translate="node-3-title">Virtual Health Assistants</h3>
+                        <p class="tl-card-desc" data-translate="node-3-desc">
+                            Provide instant, multilingual support across digital and physical channels. These AI-powered
+                            assistants reduce staff burden, accelerate patient response times, and ensure seamless
+                            communication—anytime, anywhere.
                         </p>
-                        <div class="node-tags">
-                            <span class="node-tag" data-translate="node-2-tag-1">Clinical Intelligence</span>
-                            <span class="node-tag" data-translate="node-2-tag-2">Care Optimization</span>
+                        <div class="tl-tags">
+                            <span class="tl-tag" data-translate="node-3-tag-1">Conversational AI</span>
+                            <span class="tl-tag" data-translate="node-3-tag-2">Chatbots</span>
+                        </div>
+                    </div>
+                    <div class="tl-media">
+                        <img src="../images/New folder/3.jpg" alt="Virtual Health Assistants Illustration">
+                    </div>
+                </article>
+
+                <!-- row 4: card right / media left -->
+                <article id="node4" class="tl-row rightCard theme-rose">
+                    <div class="tl-media">
+                        <img src="../images/New folder/4.jpg" alt="Care Coordination Agents Illustration">
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-icon"><i class="fa-solid fa-timeline"></i></div>
+                        <h3 class="tl-card-title" data-translate="node-4-title">AI-Powered Care Coordination Agents</h3>
+                        <p class="tl-card-desc" data-translate="node-4-desc">
+                            Automate coordination across clinical, administrative, and support teams. These agents
+                            eliminate bottlenecks, reduce delays, and prevent decision conflicts, ensuring that care
+                            delivery is synchronized and efficient.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tl-tag" data-translate="node-4-tag-1">Team Coordination</span>
+                            <span class="tl-tag" data-translate="node-4-tag-2">Workflow Automation</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- 3) صورة يسار (side-right): media-3 + card-3 -->
-                <article id="node3" class="timeline-item side-right theme-teal">
-                    <div class="node-media media-3">
-                        <img src="../images/New folder/3.jpg" alt="Virtual Health Assistants Illustration" />
-                    </div>
-                    <div class="node-copy card-3">
-                        <div class="node-icon"><i class="fas fa-robot"></i></div>
-                        <h3 class="node-title" data-translate="node-3-title">Virtual Health Assistants</h3>
-                        <p class="node-description" data-translate="node-3-desc">
-                            Instant multilingual support reduces staff load and accelerates patient response across
-                            touchpoints.
+                <!-- row 5: card left / media right -->
+                <article id="node5" class="tl-row leftCard theme-slate">
+                    <div class="tl-card">
+                        <div class="tl-icon"><i class="fa-solid fa-compass"></i></div>
+                        <h3 class="tl-card-title" data-translate="node-5-title">Agentic AI–Enabled Care Navigator</h3>
+                        <p class="tl-card-desc" data-translate="node-5-desc">
+                            Guide patients through their care journey with intelligent, real-time navigation. From
+                            appointment scheduling to follow-up reminders, this agent reduces confusion, improves
+                            adherence, and enhances continuity of care.
                         </p>
-                        <div class="node-tags">
-                            <span class="node-tag" data-translate="node-3-tag-1">Conversational AI</span>
-                            <span class="node-tag" data-translate="node-3-tag-2">Chatbots</span>
+                        <div class="tl-tags">
+                            <span class="tl-tag" data-translate="node-5-tag-1">Journey Mapping</span>
+                            <span class="tl-tag" data-translate="node-5-tag-2">Autonomous Agents</span>
                         </div>
                     </div>
-                </article>
-
-                <!-- 4) صورة يمين (side-left): media-4 + card-4 -->
-                <article id="node4" class="timeline-item side-left theme-rose">
-                    <div class="node-media media-4">
-                        <img src="../images/New folder/4.jpg" alt="Care Coordination Agents Illustration" />
-                    </div>
-                    <div class="node-copy card-4">
-                        <div class="node-icon"><i class="fas fa-users-cog"></i></div>
-                        <h3 class="node-title" data-translate="node-4-title">AI-Powered Care Coordination Agents</h3>
-                        <p class="node-description" data-translate="node-4-desc">
-                            Automated coordination across clinical and administrative teams minimizes delays and
-                            prevents decision conflicts.
-                        </p>
-                        <div class="node-tags">
-                            <span class="node-tag" data-translate="node-4-tag-1">Team Coordination</span>
-                            <span class="node-tag" data-translate="node-4-tag-2">Workflow Automation</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 5) صورة يسار (side-right): media-5 + card-5 -->
-                <article id="node5" class="timeline-item side-right theme-slate">
-                    <div class="node-media media-5">
-                        <img src="../images/New folder/5.jpg" alt="Agentic AI–Enabled Care Navigator Illustration" />
-                    </div>
-                    <div class="node-copy card-5">
-                        <div class="node-icon"><i class="fas fa-route"></i></div>
-                        <h3 class="node-title" data-translate="node-5-title">Agentic AI–Enabled Care Navigator</h3>
-                        <p class="node-description" data-translate="node-5-desc">
-                            Intelligent guidance directs patients throughout their care journey in real time, reducing
-                            confusion and loss of follow-up.
-                        </p>
-                        <div class="node-tags">
-                            <span class="node-tag" data-translate="node-5-tag-1">Journey Mapping</span>
-                            <span class="node-tag" data-translate="node-5-tag-2">Autonomous Agents</span>
-                        </div>
+                    <div class="tl-media">
+                        <img src="../images/New folder/5.jpg" alt="Agentic AI–Enabled Care Navigator Illustration">
                     </div>
                 </article>
 
             </div>
         </div>
     </section>
+
+
 
     <!-- Contact -->
     <section class="contact" id="contact">

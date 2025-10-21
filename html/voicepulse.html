@@ -10,52 +10,51 @@
 
     <!-- ربط ملف الـ CSS -->
     <link rel="stylesheet" href="../css/voicepulse.css">
-     <meta name="robots" content="index, follow">
-  <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
+        <link rel="stylesheet" href="../css/nav.css">
+
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
 
     <script defer src="../js/voicepulse.js"></script>
+    <script defer src="../js/nav.js"></script>
+
 
 </head>
 
-<body>
+<body data-page="voicepulse">
     <!-- Loading Screen -->
     <div class="loader-container" id="loader">
         <div class="loader"></div>
     </div>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <div class="navbar">
         <div class="container">
             <nav>
-                <!-- Logo: يرجع للهوم -->
                 <a href="../index.html" class="logo">
-                    <img src="../images/Home/logo.webp" alt="Voice Pulse Logo">
+                    <img src="../images/Home/logo.webp" alt="Kasaji.AI Logo">
                 </a>
 
-                <!-- Navigation Links -->
                 <ul class="nav-links">
-                    <li><a href="voicepulse.html" data-translate="nav-voicepulse">VoicePulse</a></li>
-                    <li><a href="insightai.html" data-translate="nav-insightai">InsightAI</a></li>
-                    <li><a href="actionsync.html" data-translate="nav-actionsync">ActionSync</a></li>
-                    <li><a href="insights.html" data-translate="nav-insights">Our Insights</a></li>
-                    <li><a href="about.html" data-translate="nav-about">About Us</a></li>
+                    <li><a href="voicepulse.html" data-page="voicepulse" data-translate="nav-voicepulse">VoicePulse</a>
+                    </li>
+                    <li><a href="insightai.html" data-page="insightai" data-translate="nav-insightai">InsightAI</a></li>
+                    <li><a href="actionsync.html" data-page="actionsync" data-translate="nav-actionsync">ActionSync</a>
+                    </li>
+                    <li><a href="insights.html" data-page="insights" data-translate="nav-insights">Our Insights</a></li>
+                    <li><a href="about.html" data-page="about" data-translate="nav-about">About Us</a></li>
                 </ul>
 
-                <!-- Actions -->
                 <div class="nav-actions">
-                    <div class="lang-switcher" onclick="toggleLanguage()">
+                    <button class="lang-switcher" type="button" onclick="toggleLanguage()" aria-label="Language">
                         <i class="fas fa-globe"></i>
-                    </div>
-                    <!-- زر signup يرجع لقسم الاتصال في الهوم -->
+                    </button>
                     <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
+                    <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
                 </div>
             </nav>
         </div>
     </div>
+
 
 
     <!-- Hero Section -->
@@ -223,7 +222,8 @@
             <div class="feature-card">
                 <div class="feature-image">
                     <!-- TODO: REPLACE WITH YOUR IMAGE PATH (480x352px) -->
-                    <img src="../images/voice pulse/60225ee55130c082de456f3227d2f62691181459.png" alt="Social Listening">
+                    <img src="../images/voice pulse/60225ee55130c082de456f3227d2f62691181459.png"
+                        alt="Social Listening">
                 </div>
                 <div class="feature-content">
                     <h3 class="feature-title" data-translate="feature4-title">Social Listening and Sentiment Monitoring

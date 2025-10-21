@@ -248,7 +248,7 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 
 /* ================= Header ================= */
 .main-header {
-  background: var(--header-bg);
+  background: #fff;
   backdrop-filter: blur(0px);
   padding-block: var(--header-pad-block);
   position: fixed;
@@ -274,7 +274,7 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 }
 
 .logo img {
-  height: 45px;
+  height: 40px;
   width: auto;
   transition: all .4s;
   max-width: 100%;
@@ -304,7 +304,7 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 }
 
 .main-header:not(.header-scrolled) .main-nav a {
-  color: #fff;
+  color: #060404;
 }
 
 .main-nav a::after {
@@ -335,7 +335,7 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 }
 
 .lang-switcher-icon {
-  background: transparent;
+  background: #fbeffc;
   color: var(--text);
   border: none;
   padding: 8px;
