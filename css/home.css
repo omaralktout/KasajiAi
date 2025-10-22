@@ -245,7 +245,9 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
   box-shadow: var(--shadow-sm);
   background: var(--service-cta-hover, #2563eb);
 }
+
 /* Navbar CTA override */
+
 .navbar .sign-up-btn{
   background: #1E40AF;
   color: #fff;
@@ -276,11 +278,25 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
   box-shadow: 0 5px 15px rgba(139,92,246,.3);
 }
 
+/* لو ما عندك متغيّر منفصل لبادينج الهيرو من فوق، عرّفه */
+:root{
+    --nav-h: 117px;            /* لازم يطابق ارتفاع الهيدر الفعلي */
+  --hero-pad-top: 140px;     /* المسافة اللي بدك إياها فوق داخل الهيرو */
+  --hero-pad-bottom: 100px;  /* سفلي */
+}
 
-/* ================= Hero ================= */
-.hero {
+/* استخدم القيم المنفصلة بدل shorthand القديم */
+.hero{
+  /* الخلفية نفسها */
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--tertiary-color) 100%);
-  padding-block: var(--hero-pad-block);
+
+ 
+  /* خلّي الخلفية تبدأ من بداية الصفحة */
+  margin-top: calc(-1 * var(--nav-h));                 /* نسحب الهيرو تحت الهيدر */
+  padding-top: calc(var(--hero-pad-top) + var(--nav-h)); /* نرجّع البادنغ عشان المحتوى ما يختفي */
+  padding-bottom: var(--hero-pad-bottom);
+
+  /* باقي خصائصك كما هي */
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -289,6 +305,9 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
   display: flex;
   align-items: center;
 }
+
+
+
 
 .hero .container-wide {
   display: flex;
@@ -340,6 +359,8 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
 }
+
+
 
 /* Hero bubbles */
 .hero-bubbles {
@@ -1743,3 +1764,10 @@ html.is-home .navbar .nav-links a.is-active::after {
 .navbar .nav-links a:hover{ color:var(--primary-color) !important; }
 html.is-home .navbar .nav-links a.is-active{ color:#475569 !important; }
 html.is-home .navbar .nav-links a.is-active::after{ content:none !important; }
+
+
+.hero{ padding-block: 0 !important; }
+.hero .container-wide{
+  padding-top: 175px;   /* عدّل الرقم حسب ما يلزم */
+  padding-bottom: 100px;
+}

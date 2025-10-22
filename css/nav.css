@@ -9,7 +9,6 @@
 /* Navbar */
 .navbar {
   background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
   border-bottom: 1px solid #F3F4F6;
   position: sticky;
   top: 0;
@@ -28,7 +27,7 @@ nav {
   align-items: center;
   gap: 10px;
 }
-.logo img { height: 36px; }
+.logo img { height: 70px; }
 
 /* Desktop nav links */
 .nav-links {
@@ -192,3 +191,46 @@ nav {
 }
 .navbar.is-open + .backdrop{ pointer-events: auto; }
 .backdrop[hidden]{ display: none !important; }
+
+
+
+/* لا لفة من فوق، لفة من تحت فقط */
+.navbar{
+  top: 0;                 /* يبدأ من أعلى الصفحة */
+  padding-inline: 16px;   /* الفراغ الجانبي للكارد */
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar > .container{
+  max-width: 1200px;
+  margin-inline: auto;
+  background: #fff;
+  border: 1px solid #EEF2F7;
+  /* 👇 صفرنا الحواف العلوية */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  /* نخلي الحواف من تحت بس */
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  box-shadow: 0 10px 30px rgba(17,24,39,.06);
+  padding-block: 10px;
+  padding-inline: 20px;
+  transition: border-radius .2s ease;
+}
+
+
+
+/* موبايل يبقى فل وِدث */
+@media (max-width: 768px){
+  .navbar{ padding-inline: 0; }
+  .navbar > .container{
+    max-width: none;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #F3F4F6;
+    padding-inline: 16px;
+  }
+}
