@@ -227,45 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTopButton = document.getElementById('back-to-top');
   const contactForm = document.getElementById('contactForm');
 
-  // =========================
-  // Language Switch
-  // =========================
-  function t(lang, key) {
-    if (!translations[lang]) return null;
-    if (translations[lang][key] != null) return translations[lang][key];
-    const swapped = key.includes('_') ? key.replaceAll('_', '-') : key.replaceAll('-', '_');
-    return translations[lang][swapped] != null ? translations[lang][swapped] : null;
-  }
-
-  function applyTranslations(lang) {
-    document.querySelectorAll('[data-translate], [data-translate-key]').forEach(el => {
-      const key = el.getAttribute('data-translate') || el.getAttribute('data-translate-key');
-      const val = t(lang, key);
-      if (val != null) el.innerHTML = val;
-    });
-    document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
-      const key = el.getAttribute('data-translate-placeholder');
-      const val = t(lang, key);
-      if (val != null) el.setAttribute('placeholder', val);
-    });
-  }
-
-  function updateLanguage(lang){
-    html.setAttribute('lang', lang);
-    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    applyTranslations(lang);
-    if (langBtn) langBtn.setAttribute('title', lang === 'ar' ? 'تغيير اللغة' : 'Change Language');
-    localStorage.setItem('selectedLanguage', lang);
-  }
-
-  function toggleLang(){
-    const current = html.getAttribute('lang') || 'en';
-    updateLanguage(current === 'en' ? 'ar' : 'en');
-  }
-
-  if (langBtn) langBtn.addEventListener('click', toggleLang);
-  // default language is English
-  updateLanguage(localStorage.getItem('selectedLanguage') || 'en');
+  
 
   // =========================
   // Header Scroll + Back to Top
@@ -361,11 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-window.toggleLang = toggleLang;
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('drawer-lang')?.addEventListener('click', () => window.toggleLang && window.toggleLang());
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');

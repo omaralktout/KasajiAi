@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsightAI</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/insightai.css">
-  <link rel="stylesheet" href="../css/nav.css">
 
-   <meta name="robots" content="index, follow">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/insightai.css">
+
+  <meta name="robots" content="index, follow">
   <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
 
+  <!-- JS (حمّل nav.js قبل سكربت الصفحة) -->
+     <script defer src="../js/translations.js"></script>
+
+  <script defer src="../js/nav.js"></script>
   <script defer src="../js/insightai.js"></script>
-    <script defer src="../js/nav.js"></script>
-
-
 </head>
 
 <body data-page="insightai">
@@ -26,38 +29,37 @@
   </div>
 
   <!-- Navbar -->
-<div class="navbar">
-  <div class="container">
-    <nav>
-      <a href="../index.html" class="logo">
-        <img src="../images/Home/logo.webp" alt="Kasaji.AI Logo">
-      </a>
+  <div class="navbar">
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">
+          <img src="../images/Home/logo.webp" alt="Kasaji.AI" />
+        </a>
 
-      <ul class="nav-links">
-        <li><a href="voicepulse.html" data-page="voicepulse" data-translate="nav-voicepulse">VoicePulse</a></li>
-        <li><a href="insightai.html"  data-page="insightai"  data-translate="nav-insightai">InsightAI</a></li>
-        <li><a href="actionsync.html"  data-page="actionsync"  data-translate="nav-actionsync">ActionSync</a></li>
-        <li><a href="insights.html"    data-page="insights"    data-translate="nav-insights">Our Insights</a></li>
-        <li><a href="about.html"       data-page="about"       data-translate="nav-about">About Us</a></li>
-      </ul>
+        <ul class="nav-links">
+          <li><a href="voicepulse.html" data-translate-key="nav-voicepulse">VoicePulse</a></li>
+          <li><a href="insightai.html"  data-translate-key="nav-insightai">InsightAI</a></li>
+          <li><a href="actionsync.html"  data-translate-key="nav-actionsync">ActionSync</a></li>
+          <li><a href="insights.html"    data-translate-key="nav-insights">Our Insights</a></li>
+          <li><a href="about.html"       data-translate-key="nav-about">About Us</a></li>
+        </ul>
 
-      <div class="nav-actions">
-        <button class="lang-switcher" type="button" onclick="toggleLanguage()" aria-label="Language">
-          <i class="fas fa-globe"></i>
-        </button>
-        <a href="Home.html#contact" class="sign-up-btn" data-translate="nav-signup">Sign up</a>
-        <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
-      </div>
-    </nav>
+        <div class="nav-actions">
+          <button class="lang-switcher" id="lang-switcher" type="button" title="Change Language" aria-label="Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          <a href="../index.html#contact" class="sign-up-btn" data-translate-key="nav-signup">Sign up</a>
+          <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
 
   <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <!-- animated squares (kept) -->
           <div class="text-decorative-square text-square-1"></div>
           <div class="text-decorative-square text-square-2"></div>
           <div class="text-decorative-square text-square-3"></div>
@@ -104,17 +106,13 @@
           <div class="section-text">
             <h2 class="section-title" data-translate="patient-feedback-title">Patient Feedback Insights</h2>
             <p class="section-description" data-translate="patient-feedback-desc">
-              A deep analytical approach to multi-source experience data, designed to turn feedback into measurable
-              indicators.
+              A deep analytical approach to multi-source experience data, designed to turn feedback into measurable indicators.
             </p>
             <ul class="section-features">
-              <li data-translate="patient-feedback-feature-1">Extracts recurring patterns from qualitative and
-                quantitative inputs</li>
-              <li data-translate="patient-feedback-feature-2">Links insights to clinical context, service type, and care
-                stages</li>
+              <li data-translate="patient-feedback-feature-1">Extracts recurring patterns from qualitative and quantitative inputs</li>
+              <li data-translate="patient-feedback-feature-2">Links insights to clinical context, service type, and care stages</li>
               <li data-translate="patient-feedback-feature-3">Identifies expectation gaps versus actual outcomes</li>
-              <li data-translate="patient-feedback-feature-4">Converts open feedback into structured, improvement-ready
-                signals</li>
+              <li data-translate="patient-feedback-feature-4">Converts open feedback into structured, improvement-ready signals</li>
             </ul>
           </div>
           <div class="section-image">
@@ -144,28 +142,20 @@
           <img src="../images/insight/div.png" alt="Sentiment & Emotion">
         </div>
 
-        <!-- كتلة النص بالكامل على اليمين -->
         <div class="section-text">
           <h2 class="section-title" data-translate="patient-intelligence-title">
             Patient Intelligence and Experience Insights
           </h2>
-
           <p class="section-description" data-translate="patient-intelligence-desc">
-            A blended analysis of behavioral signals, personal perceptions, and service interactions to reveal deeper
-            layers of the care journey.
+            A blended analysis of behavioral signals, personal perceptions, and service interactions to reveal deeper layers of the care journey.
           </p>
-
           <ul class="section-features">
-            <li data-translate="patient-intelligence-feature-1">Connecting feedback with patterns of use and engagement
-            </li>
-            <li data-translate="patient-intelligence-feature-2">Tracing the influence of each touchpoint on overall
-              perception</li>
-            <li data-translate="patient-intelligence-feature-3">Prioritizing improvements based on real experiential
-              impact</li>
+            <li data-translate="patient-intelligence-feature-1">Connecting feedback with patterns of use and engagement</li>
+            <li data-translate="patient-intelligence-feature-2">Tracing the influence of each touchpoint on overall perception</li>
+            <li data-translate="patient-intelligence-feature-3">Prioritizing improvements based on real experiential impact</li>
           </ul>
         </div>
       </div>
-
 
       <!-- Predictive -->
       <div class="section">
@@ -216,8 +206,7 @@
     <div class="container">
       <div class="contact-container">
         <h2 class="contact-title" data-translate="contact-title">Ready to Transform Your Business?</h2>
-        <p class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference our
-          platform can make</p>
+        <p class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference our platform can make</p>
 
         <div class="contact-content">
           <div class="contact-info">
@@ -279,8 +268,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">Kasaji.AI</div>
-        <p class="footer-description" data-translate="footer-description">Transforming businesses through intelligent
-          customer insights</p>
+        <p class="footer-description" data-translate="footer-description">Transforming businesses through intelligent customer insights</p>
         <div class="social-links">
           <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -292,7 +280,5 @@
       </div>
     </div>
   </footer>
-
 </body>
-
 </html>
