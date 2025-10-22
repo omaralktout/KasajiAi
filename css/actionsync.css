@@ -64,7 +64,7 @@
   }
 
  
-
+.t-multiline { white-space: pre-line; }
   /* Hero (مصغّر) */
   .hero {
       background: #fff;

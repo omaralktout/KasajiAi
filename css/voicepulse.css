@@ -96,6 +96,7 @@ body[dir="rtl"] {
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
+.t-multiline { white-space: pre-line; }
 
 /* الاحتفاظ بهذا الـ keyframes كما هو لباقي الأقسام */
 @keyframes fadeInUp {

@@ -110,7 +110,7 @@ window.translations = {
 
     "home.mission.title": "Mission",
     "home.mission.body":
-      "Our mission is to empower healthcare providers and businesses with intelligent tools that capture and analyze real-time feedback. Through our Experience Management and Voice of Customer (VoC) platforms, we enable data-driven decisions that improve satisfaction, loyalty, and operational excellence",
+      "Our mission is to empower healthcare providers and businesses with intelligent tools that\n capture and analyze real-time feedback. Through our Experience Management and Voice\n of Customer (VoC) platforms, we enable data-driven decisions that improve satisfaction,\n loyalty, and operational excellence",
 
     "home.why.title": "Why We Stand Out",
     "home.why.subtitle":
@@ -151,7 +151,7 @@ window.translations = {
     /*==========Voice========*/
     "Voice-hero-title": "Voice Pulse",
     "Voice-hero-description":
-      "A continuous listening framework that captures multi-source feedback and turns it into measurable insights across the care journey.",
+      "A continuous listening framework that captures\n multi-source feedback and turns it into measurable insights across the care journey.",
     "voice-features-title": "Our Key Features",
     "voice-feature1-title": "Patient and Carer Experience Surveys",
     "voice-feature1-description":
@@ -207,7 +207,7 @@ window.translations = {
 
     "insightai-hero-title": "InsightAI",
     "insightai-hero-description":
-      "Advanced insights platform connecting experience to behavior, outcomes, and future expectations.",
+      "Advanced insights platform connecting\n experience to behavior, outcomes, and\n future expectations.",
     "insightai-intelligence-layer-text":
       "A next-generation intelligence layer that transforms feedback into foresight and action.",
     "insightai-patient-feedback-title": "Patient Feedback Insights",
@@ -259,14 +259,14 @@ window.translations = {
       
     "hero-title-actionsync": "ActionSync",
     "hero-description-actionsync":
-      "A real-time execution layer powered by AI to turn insights into immediate actions across the care journey.",
+      "A real-time execution layer powered by AI\n to turn insights into immediate actions\n across the care journey.",
 
     "actionsync-i18n":
-      "Five Execution Nodes: Powering Real-Time Patient Experience Transformation",
+      "Five Execution Nodes: Powering Real-Time\n Patient Experience Transformation",
     "actionsync-i18n":
-      "Unlock the full potential of patient experience with our intelligent action layer—driven by AI and designed to deliver immediate, meaningful impact across every touchpoint in the care journey",
+      "Unlock the full potential of patient experience with our intelligent action\n layer—driven by AI and designed to deliver immediate, meaningful impact\n across every touchpoint in the care journey",
 
-    "actionsync-node-1-title": "Proactive Patient Outreach & Complaint Resolution",
+    "actionsync-node-1-title": "Proactive Patient Outreach &\n Complaint Resolution",
     "actionsync-node-1-desc":
       "Preemptive intervention reduces escalation and transforms potential complaints into opportunities for increased trust and satisfaction. Anticipate patient concerns before they escalate. Our system identifies early signals of dissatisfaction and initiates timely outreach, turning potential complaints into moments of empathy, trust-building, and loyalty.",
     "actionsync-node-1-tag-1": "Alert Automation",

@@ -66,6 +66,7 @@ html[dir="rtl"], body[dir="rtl"] {
 }
 
 
+.t-multiline { white-space: pre-line; }
 
 /* Hero (compact like ActionSync, same look) */
 .hero {

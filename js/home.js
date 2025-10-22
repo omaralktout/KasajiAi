@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================
   // Header Scroll + Back to Top
   // =========================
-  function handleHeaderScroll() {
-    if (!mainHeader) return;
-    if (window.scrollY > 60) mainHeader.classList.add('header-scrolled');
-    else mainHeader.classList.remove('header-scrolled');
-  }
+ function handleHeaderScroll() {
+  if (!mainHeader) return;
+  if (mainHeader.classList.contains('is-open')) return; // تجاهل أثناء الفتح
+  if (window.scrollY > 60) mainHeader.classList.add('header-scrolled');
+  else mainHeader.classList.remove('header-scrolled');
+}
+
 
   function handleBackToTop() {
     if (!backToTopButton) return;
