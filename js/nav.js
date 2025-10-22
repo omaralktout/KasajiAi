@@ -45,9 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============== Active nav link ==============
 function isHomePage() {
   const path = location.pathname.replace(/\/+$/, '');
-  const file = (path.split('/').pop() || 'index.html').toLowerCase();
-  return file === 'index.html';
+  const last = path.split('/').pop(); // ممكن تكون "" على GH Pages
+  return !last || last.toLowerCase() === 'index.html';
 }
+
+
 
 function clearActiveLinks() {
   document.querySelectorAll('.nav-links a.is-active')
