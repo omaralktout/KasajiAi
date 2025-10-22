@@ -804,3 +804,55 @@
   background: linear-gradient(90deg,#6c4df6,#9b8cff);
   border-radius: 999px;
 }
+/* Navbar: كارد بالنص + سِيدز نظيفة بدون ظل/حدود */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-inline: 16px;
+
+  /* نخلي خلف الناف بار فل وِدث أبيض عشان ما يبين أي خطوط على اليمين/اليسار */
+  background: transparent;
+}
+.navbar::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;   /* يملأ العرض كله بالأبيض خلف الكارد */
+  z-index: 0;         /* تحت محتوى الناف */
+}
+
+.navbar > .container{
+  position: relative;
+  z-index: 1;          /* فوق الـ ::before */
+  max-width: 1200px;   /* الكارد بالنص */
+  margin-inline: auto;
+  background: #fff;
+
+  /* بدون شادو ولا بوردر */
+  border: none;
+  box-shadow: none;
+
+  /* زوايا من تحت فقط */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+
+  padding-block: 10px;
+  padding-inline: 20px;
+}
+
+/* موبايل: فل وِدث بدون كارد */
+@media (max-width: 768px){
+  .navbar{ padding-inline: 0; }
+  .navbar::before{ background: #fff; }
+  .navbar > .container{
+    max-width: none;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #F3F4F6; /* خط خفيف للموبايل فقط (احذفها لو مش بدك) */
+    padding-inline: 16px;
+  }
+}
