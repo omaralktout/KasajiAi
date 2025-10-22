@@ -1729,12 +1729,17 @@ html[dir="rtl"] .comparison-card.featured li::before {
   
 
 .t-multiline { white-space: pre-line; }
+/* عطّل تمييز اللينكات على الهوم */
+html.is-home .navbar .nav-links a.is-active {
+  color: inherit !important;      /* يرجّع اللون الافتراضي */
+}
+html.is-home .navbar .nav-links a.is-active::after {
+  content: none !important;       /* يخفي الخط السفلي المتدرّج */
+}
 .navbar .nav-links a,
 .navbar .nav-links a:link,
 .navbar .nav-links a:visited,
-.navbar .nav-links a:active{
-  color: #475569 !important;
-  text-decoration: none;
-}
-.navbar .nav-links a:hover{ color: var(--primary-color) !important; }
-.navbar .nav-links a.is-active{ color: #6c4df6 !important; }
+.navbar .nav-links a:active{ color:#475569 !important; text-decoration:none; }
+.navbar .nav-links a:hover{ color:var(--primary-color) !important; }
+html.is-home .navbar .nav-links a.is-active{ color:#475569 !important; }
+html.is-home .navbar .nav-links a.is-active::after{ content:none !important; }

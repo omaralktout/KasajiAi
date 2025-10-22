@@ -45,11 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============== Active nav link ==============
 function isHomePage() {
   const path = location.pathname.replace(/\/+$/, '');
-  const last = path.split('/').pop(); // ممكن تكون "" على GH Pages
+  const last = path.split('/').pop(); // على GH Pages ممكن تكون ""
   return !last || last.toLowerCase() === 'index.html';
 }
-
-
 
 function clearActiveLinks() {
   document.querySelectorAll('.nav-links a.is-active')
@@ -57,70 +55,55 @@ function clearActiveLinks() {
 }
 
 function setActiveNavLink() {
-  // ⛔️ على الهوم: لا تفعيل إطلاقًا
-  if (isHomePage()) {
-    clearActiveLinks();
-    return;
-  }
+  // ⛔️ الهوم: لا تفعيل إطلاقًا
+  if (isHomePage()) { clearActiveLinks(); return; }
 
-  const currentFile = (function () {
-    let path = location.pathname.replace(/\/+$/, '');
-    let file = path.split('/').pop();
-    return (file && file.length) ? file.toLowerCase() : 'index.html';
+  const currentFile = (() => {
+    let p = location.pathname.replace(/\/+$/, '');
+    let f = p.split('/').pop();
+    return (f && f.length) ? f.toLowerCase() : 'index.html';
   })();
 
   const currentPage = (document.body.getAttribute('data-page') || '').toLowerCase();
-  const currentHash = location.hash || '';
 
   const parseHref = (href) => {
     try {
       const u = new URL(href, location.href);
       let p = u.pathname.replace(/\/+$/, '');
       let f = p.split('/').pop();
-      return {
-        file: (f && f.length) ? f.toLowerCase() : 'index.html',
-        hash: u.hash || ''
-      };
+      return { file: (f && f.length) ? f.toLowerCase() : 'index.html' };
     } catch {
       const f = (href || '').split('/').pop();
-      const h = (href || '').includes('#') ? '#' + href.split('#').pop() : '';
-      return { file: (f && f.length) ? f.toLowerCase() : 'index.html', hash: h };
+      return { file: (f && f.length) ? f.toLowerCase() : 'index.html' };
     }
   };
 
   document.querySelectorAll('.nav-links a').forEach((a) => {
-    const { file, hash } = parseHref(a.getAttribute('href'));
+    const { file } = parseHref(a.getAttribute('href'));
     const linkDataPage = (a.dataset.page || '').toLowerCase();
-
-    let isActive = false;
-
-    if (file !== 'index.html') {
-      isActive = (file === currentFile);
-    } else {
-      if (currentFile === 'index.html') {
-        if (hash && hash.startsWith('#')) {
-          isActive = (hash === currentHash);
-        } else {
-          isActive = (!currentHash);
-        }
-      }
-    }
-
-    if (!isActive && currentPage && linkDataPage) {
-      isActive = (currentPage === linkDataPage);
-    }
-
+    let isActive = (file !== 'index.html') ? (file === currentFile) : false;
+    if (!isActive && currentPage && linkDataPage) isActive = (currentPage === linkDataPage);
     a.classList.toggle('is-active', !!isActive);
   });
 }
 
 // عند التحميل
 document.addEventListener('DOMContentLoaded', () => {
-  if (isHomePage()) clearActiveLinks();   // الهوم: نظّف فقط
-  else setActiveNavLink();
+  if (isHomePage()) {
+    document.documentElement.classList.add('is-home'); // فلاغ للهوم (مفيد للـCSS)
+    clearActiveLinks();
+    // حماية إضافية لو سكربت ثاني رجّع is-active
+    const nav = document.querySelector('.nav-links');
+    if (nav && 'MutationObserver' in window) {
+      const mo = new MutationObserver(() => clearActiveLinks());
+      mo.observe(nav, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    }
+  } else {
+    setActiveNavLink();
+  }
 });
 
-// الهوم: بدل ما نعيد التفعيل عند تغيير الهاش، نمسح أي تفعيل
+// تغيير الهاش
 window.addEventListener('hashchange', () => {
   if (isHomePage()) clearActiveLinks();
   else setActiveNavLink();
