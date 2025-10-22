@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://www.kasaji.ai/" />
 
   <!-- Styles -->
-     <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/nav.css" />
 
   <link rel="stylesheet" href="css/home.css" />
 
@@ -28,51 +28,44 @@
 </head>
 
 <body data-page="index">
-  <!-- Navbar -->
-  <div class="navbar" id="main-header">
-    <div class="container">
-      <nav>
-        <a href="index.html" class="logo">
-          <img src="images/Home/logo.webp" alt="Kasaji.AI" />
-        </a>
+<!-- Navbar -->
+<div class="navbar" id="main-header" data-mobile-nav>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="images/Home/logo.webp" alt="Kasaji.AI" />
+      </a>
 
-        <ul class="nav-links">
-          <li><a href="#voicepulse" data-translate-key="nav_voicepulse">VoicePulse</a></li>
-          <li><a href="#insightai"  data-translate-key="nav_insightai">InsightAI</a></li>
-          <li><a href="#actionsync" data-translate-key="nav_actionsync">ActionSync</a></li>
-          <li><a href="#insights"   data-translate-key="nav_insights">Our Insights</a></li>
-          <li><a href="#about"      data-translate-key="nav_about">About Us</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <button class="lang-switcher" id="lang-switcher" type="button" title="Change Language" aria-label="Language">
-            <i class="fas fa-globe"></i>
-          </button>
-          <a href="#contact" class="sign-up-btn" data-translate-key="nav_signup">Sign up</a>
-          <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <!-- Mobile drawer -->
-  <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu__backdrop" data-close></div>
-    <aside class="mobile-menu__panel">
-      <button class="mobile-menu__close" aria-label="Close menu" data-close>&times;</button>
-      <ul class="mobile-menu__list">
+      <ul class="nav-links" id="primaryNav">
         <li><a href="#voicepulse" data-translate-key="nav_voicepulse">VoicePulse</a></li>
         <li><a href="#insightai"  data-translate-key="nav_insightai">InsightAI</a></li>
         <li><a href="#actionsync" data-translate-key="nav_actionsync">ActionSync</a></li>
+        <li><a href="#insights"   data-translate-key="nav_insights">Our Insights</a></li>
+        <li><a href="#about"      data-translate-key="nav_about">About Us</a></li>
       </ul>
-      <div class="mobile-menu__actions">
-        <a href="#contact" class="btn btn-primary" data-translate-key="nav_signup">Sign up</a>
-        <button type="button" class="btn btn-hero-secondary mobile-lang-toggle" id="drawer-lang">
-          <span data-translate-key="nav_lang">Language</span>
+
+      <div class="nav-actions">
+        <button class="lang-switcher" id="lang-switcher" type="button" title="Change Language" aria-label="Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        <a href="#contact" class="sign-up-btn" data-translate-key="nav_signup">Sign up</a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-controls="primaryNav" aria-expanded="false"
+                aria-label="Open menu" title="Menu">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
-    </aside>
-  </nav>
+    </nav>
+  </div>
+</div>
+
+<!-- خلفية شفافة (لا ضباب) -->
+<div class="backdrop" hidden></div>
+
+
+
+
 
   <main>
     <!-- Hero -->
@@ -113,7 +106,6 @@
 
         <div class="partners-logos reveal stagger" aria-label="partners-logos">
           <div class="partner-card"><img src="images/Home/1.jpg" alt="Partner 1"></div>
-          <div class="partner-card"><img src="images/Home/2.jpg" alt="Partner 2"></div>
           <div class="partner-card"><img src="images/Home/3.png" alt="Partner 3"></div>
           <div class="partner-card"><img src="images/Home/4.jpg" alt="Partner 4"></div>
           <div class="partner-card"><img src="images/Home/5.png" alt="Partner 5"></div>
@@ -397,65 +389,70 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="contact-container">
-          <h2 class="contact-title"    data-translate="contact-title">Ready to Transform Your Business?</h2>
-          <p  class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference our platform can make</p>
-          <div class="contact-content">
-            <div class="contact-info">
-              <h3 class="info-title" data-translate="contact-info-title">Contact Information</h3>
-              <div class="info-item">
-                <div class="info-icon phone-icon"><i class="fas fa-phone"></i></div>
-                <div class="info-details">
-                  <h4 data-translate="contact-phone">Phone</h4>
-                  <p>07777789999</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
-                <div class="info-details">
-                  <h4 data-translate="contact-email">Email</h4>
-                  <p>contact@kasaji.AI</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="info-details">
-                  <h4 data-translate="contact-address">Address</h4>
-                  <p>123 Tech Street, Innovation City</p>
-                </div>
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <h2 class="contact-title" data-translate="common.contact.title">Ready to Transform Your Business?</h2>
+        <p class="contact-subtitle" data-translate="common.contact.subtitle">Get started today and see the difference our platform can make</p>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3 class="info-title" data-translate="common.contact.info">Contact Information</h3>
+
+            <div class="info-item">
+              <div class="info-icon phone-icon"><i class="fas fa-phone"></i></div>
+              <div class="info-details">
+                <h4 data-translate="common.contact.phone">Phone</h4>
+                <p>07777789999</p>
               </div>
             </div>
 
-            <div class="contact-form">
-              <form id="contactForm" action="/send.php" method="POST" novalidate>
-                <div class="form-group">
-                  <input id="form-name" type="text" class="form-control" name="name"
-                         data-translate-placeholder="form-name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                  <input id="form-email" type="email" class="form-control" name="email"
-                         data-translate-placeholder="form-email" placeholder="Your Email" required />
-                </div>
-                <div class="form-group">
-                  <textarea id="form-message" class="form-control" name="message"
-                            data-translate-placeholder="form-message" placeholder="Your Message" required></textarea>
-                </div>
-
-                <!-- honeypot -->
-                <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
-
-                <div class="form-group">
-                  <button type="submit" class="submit-btn" data-translate="form-submit">Send Message</button>
-                </div>
-              </form>
+            <div class="info-item">
+              <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
+              <div class="info-details">
+                <h4 data-translate="common.contact.email">Email</h4>
+                <p>contact@kasaji.AI</p>
+              </div>
             </div>
 
+            <div class="info-item">
+              <div class="info-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info-details">
+                <h4 data-translate="common.contact.address">Address</h4>
+                <p>123 Tech Street, Innovation City</p>
+              </div>
+            </div>
           </div>
+
+          <div class="contact-form">
+            <form id="contactForm" action="/send.php" method="POST" novalidate>
+              <div class="form-group">
+                <input id="form-name" type="text" class="form-control" name="name"
+                  data-translate-placeholder="common.form.name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input id="form-email" type="email" class="form-control" name="email"
+                  data-translate-placeholder="common.form.email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea id="form-message" class="form-control" name="message"
+                  data-translate-placeholder="common.form.message" placeholder="Your Message" required></textarea>
+              </div>
+
+              <!-- honeypot -->
+              <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
+
+              <div class="form-group">
+                <button type="submit" class="submit-btn" data-translate="common.form.submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
   </main>
 
   <!-- Footer -->

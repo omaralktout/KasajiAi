@@ -17,8 +17,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://www.kasajiacademy.com/img/portal/favicon.png">
 
   <!-- JS (رتّب: nav.js قبل voicepulse.js) -->
-     <script defer src="../js/translations.js"></script>
-
+  <script defer src="../js/translations.js"></script>
   <script defer src="../js/nav.js"></script>
   <script defer src="../js/voicepulse.js"></script>
 </head>
@@ -28,33 +27,42 @@
   <div class="loader-container" id="loader">
     <div class="loader"></div>
   </div>
+<!-- Navbar -->
+<div class="navbar" id="main-header" data-mobile-nav>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="logo">
+        <img src="../images/Home/logo.webp" alt="Kasaji.AI">
+      </a>
 
-  <!-- Navbar -->
-  <div class="navbar" id="main-header">
-    <div class="container">
-      <nav>
-        <a href="../index.html" class="logo">
-          <img src="../images/Home/logo.webp" alt="Kasaji.AI">
-        </a>
+      <!-- اضفنا id="primaryNav" -->
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="voicepulse.html" data-translate-key="nav-voicepulse">VoicePulse</a></li>
+        <li><a href="insightai.html"  data-translate-key="nav-insightai">InsightAI</a></li>
+        <li><a href="actionsync.html" data-translate-key="nav-actionsync">ActionSync</a></li>
+        <li><a href="insights.html"   data-translate-key="nav-insights">Our Insights</a></li>
+        <li><a href="about.html"      data-translate-key="nav-about">About Us</a></li>
+      </ul>
 
-        <ul class="nav-links">
-          <li><a href="voicepulse.html" data-translate-key="nav-voicepulse">VoicePulse</a></li>
-          <li><a href="insightai.html"  data-translate-key="nav-insightai">InsightAI</a></li>
-          <li><a href="actionsync.html"  data-translate-key="nav-actionsync">ActionSync</a></li>
-          <li><a href="insights.html"    data-translate-key="nav-insights">Our Insights</a></li>
-          <li><a href="about.html"       data-translate-key="nav-about">About Us</a></li>
-        </ul>
+      <div class="nav-actions">
+        <button class="lang-switcher" id="lang-switcher" type="button" title="Change Language" aria-label="Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        <a href="#contact" class="sign-up-btn" data-translate-key="nav_signup">Sign up</a>
 
-        <div class="nav-actions">
-          <button class="lang-switcher" id="lang-switcher" type="button" title="Change Language" aria-label="Language">
-            <i class="fas fa-globe"></i>
-          </button>
-          <a href="../index.html#contact" class="sign-up-btn" data-translate-key="nav-signup">Sign up</a>
-          <div class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
-        </div>
-      </nav>
-    </div>
+        <button class="menu-toggle" id="menuToggle"
+                aria-controls="primaryNav" aria-expanded="false"
+                aria-label="Open menu" title="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
   </div>
+</div>
+
+<!-- احذف الخلفية إذا تستخدم سكربت “بدون Backdrop” -->
+<!-- <div class="backdrop" hidden></div> -->
+
 
   <!-- Hero -->
   <section class="hero">
@@ -67,8 +75,8 @@
           <div class="text-decorative-square text-square-4"></div>
           <div class="text-decorative-square text-square-5"></div>
           <div class="text-decorative-square text-square-6"></div>
-          <h1 class="hero-title" data-translate="hero-title">Voice Pulse</h1>
-          <p class="hero-description" data-translate="hero-description">
+          <h1 class="hero-title" data-translate="Voice-hero-title">Voice Pulse</h1>
+          <p class="hero-description" data-translate="Voice-hero-description">
             A continuous listening framework that captures multi-source feedback and turns it into measurable insights across the care journey.
           </p>
         </div>
@@ -85,26 +93,26 @@
       <!-- Feature 1 -->
       <div class="feature-card">
         <div class="feature-content">
-          <h3 class="feature-title" data-translate="feature1-title">Patient and Carer Experience Surveys</h3>
-          <p class="feature-description" data-translate="feature1-description">
+          <h3 class="feature-title" data-translate="voice-feature1-title">Patient and Carer Experience Surveys</h3>
+          <p class="feature-description" data-translate="voice-feature1-description">
             An advanced approach to measuring experiences with high accuracy, capable of capturing variations across different stages of the care journey.
           </p>
           <ul class="feature-list">
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature1-item1">Dynamic survey design tailored to service type and audience segment</div>
+              <div class="feature-text" data-translate="voice-feature1-item1">Dynamic survey design tailored to service type and audience segment</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature1-item2">Analysis that uncovers deeper experiential gaps rather than surface-level satisfaction</div>
+              <div class="feature-text" data-translate="voice-feature1-item2">Analysis that uncovers deeper experiential gaps rather than surface-level satisfaction</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature1-item3">Integration of responses with clinical and operational data for deeper insight</div>
+              <div class="feature-text" data-translate="voice-feature1-item3">Integration of responses with clinical and operational data for deeper insight</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature1-item4">Comprehensive coverage of pre-, during-, and post-service interactions</div>
+              <div class="feature-text" data-translate="voice-feature1-item4">Comprehensive coverage of pre-, during-, and post-service interactions</div>
             </li>
           </ul>
         </div>
@@ -119,26 +127,26 @@
           <img src="../images/voice pulse/2d9ce068ef44de8813bc6728a035d16466c4d1ca.png" alt="CATI">
         </div>
         <div class="feature-content">
-          <h3 class="feature-title" data-translate="feature2-title">Computer-Assisted Telephone Interviewing (CATI)</h3>
-          <p class="feature-description" data-translate="feature2-description">
+          <h3 class="feature-title" data-translate="voice-feature2-title">Computer-Assisted Telephone Interviewing (CATI)</h3>
+          <p class="feature-description" data-translate="voice-feature2-description">
             A structured and technology-enabled method for collecting precise insights through guided, data-driven phone interactions.
           </p>
           <ul class="feature-list">
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature2-item1">Standardized call scripts adapted to language, context, and service type</div>
+              <div class="feature-text" data-translate="voice-feature2-item1">Standardized call scripts adapted to language, context, and service type</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature2-item2">Smart interview models that capture and convert responses into analyzable data</div>
+              <div class="feature-text" data-translate="voice-feature2-item2">Smart interview models that capture and convert responses into analyzable data</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature2-item3">Access to audiences that do not engage with digital or self-administered channels</div>
+              <div class="feature-text" data-translate="voice-feature2-item3">Access to audiences that do not engage with digital or self-administered channels</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature2-item4">Extraction of both quantitative indicators and qualitative observations during calls</div>
+              <div class="feature-text" data-translate="voice-feature2-item4">Extraction of both quantitative indicators and qualitative observations during calls</div>
             </li>
           </ul>
         </div>
@@ -153,10 +161,10 @@
         <div class="decorative-square square-5"></div>
 
         <div class="container">
-          <h2 class="quote-title" data-translate="quote-title">
+          <h2 class="quote-title" data-translate="voice-quote-title">
             Are you hearing everything that's being said — or only what's being said to you?
           </h2>
-          <p class="quote-text" data-translate="quote-text">
+          <p class="quote-text" data-translate="voice-quote-text">
             VoicePulse doesn't wait for feedback to arrive through formal channels. It captures experiences from both silent and explicit signals — from passing emotions and in-the-moment impressions to digital sentiment and contextual interactions — and turns them into insights that can be measured, tracked, and improved.
           </p>
         </div>
@@ -165,26 +173,26 @@
       <!-- Feature 3 -->
       <div class="feature-card">
         <div class="feature-content">
-          <h3 class="feature-title" data-translate="feature3-title">Experience-Based Co-Design (EBCD) Workshops and Focus Groups</h3>
-          <p class="feature-description" data-translate="feature3-description">
+          <h3 class="feature-title" data-translate="voice-feature3-title">Experience-Based Co-Design (EBCD) Workshops and Focus Groups</h3>
+          <p class="feature-description" data-translate="voice-feature3-description">
             A participatory framework that brings patients, caregivers, and healthcare staff together to redesign experiences based on real needs—not assumptions.
           </p>
           <ul class="feature-list">
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature3-item1">Engaging stakeholders in identifying pain points and opportunities across the care pathway</div>
+              <div class="feature-text" data-translate="voice-feature3-item1">Engaging stakeholders in identifying pain points and opportunities across the care pathway</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature3-item2">Facilitating interactive sessions to address root causes rather than surface symptoms</div>
+              <div class="feature-text" data-translate="voice-feature3-item2">Facilitating interactive sessions to address root causes rather than surface symptoms</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature3-item3">Co-developing actionable improvements with clinical and operational teams</div>
+              <div class="feature-text" data-translate="voice-feature3-item3">Co-developing actionable improvements with clinical and operational teams</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet purple-bullet"></div>
-              <div class="feature-text" data-translate="feature3-item4">Translating individual experiences into insights that inform policy and service design</div>
+              <div class="feature-text" data-translate="voice-feature3-item4">Translating individual experiences into insights that inform policy and service design</div>
             </li>
           </ul>
         </div>
@@ -199,26 +207,26 @@
           <img src="../images/voice pulse/60225ee55130c082de456f3227d2f62691181459.png" alt="Social Listening">
         </div>
         <div class="feature-content">
-          <h3 class="feature-title" data-translate="feature4-title">Social Listening and Sentiment Monitoring</h3>
-          <p class="feature-description" data-translate="feature4-description">
+          <h3 class="feature-title" data-translate="voice-feature4-title">Social Listening and Sentiment Monitoring</h3>
+          <p class="feature-description" data-translate="voice-feature4-description">
             A smart mechanism for capturing what is being said across digital channels and turning unprompted opinions into actionable signals.
           </p>
           <ul class="feature-list">
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature4-item1">Monitoring conversations and mentions across social platforms and online communities</div>
+              <div class="feature-text" data-translate="voice-feature4-item1">Monitoring conversations and mentions across social platforms and online communities</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature4-item2">Sentiment and language analysis to uncover invisible experience gaps</div>
+              <div class="feature-text" data-translate="voice-feature4-item2">Sentiment and language analysis to uncover invisible experience gaps</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature4-item3">Early detection of emerging trends related to satisfaction, concern, or trust</div>
+              <div class="feature-text" data-translate="voice-feature4-item3">Early detection of emerging trends related to satisfaction, concern, or trust</div>
             </li>
             <li class="feature-item">
               <div class="feature-bullet blue-bullet"></div>
-              <div class="feature-text" data-translate="feature4-item4">Alignment of insights with experience dashboards to support improvement cycles</div>
+              <div class="feature-text" data-translate="voice-feature4-item4">Alignment of insights with experience dashboards to support improvement cycles</div>
             </li>
           </ul>
         </div>
@@ -226,22 +234,21 @@
 
     </div>
   </section>
-
-  <!-- Contact -->
+   <!-- Contact -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-container">
-        <h2 class="contact-title" data-translate="contact-title">Ready to Transform Your Business?</h2>
-        <p class="contact-subtitle" data-translate="contact-subtitle">Get started today and see the difference our platform can make</p>
+        <h2 class="contact-title" data-translate="common.contact.title">Ready to Transform Your Business?</h2>
+        <p class="contact-subtitle" data-translate="common.contact.subtitle">Get started today and see the difference our platform can make</p>
 
         <div class="contact-content">
           <div class="contact-info">
-            <h3 class="info-title" data-translate="contact-info-title">Contact Information</h3>
+            <h3 class="info-title" data-translate="common.contact.info">Contact Information</h3>
 
             <div class="info-item">
               <div class="info-icon phone-icon"><i class="fas fa-phone"></i></div>
               <div class="info-details">
-                <h4 data-translate="contact-phone">Phone</h4>
+                <h4 data-translate="common.contact.phone">Phone</h4>
                 <p>07777789999</p>
               </div>
             </div>
@@ -249,7 +256,7 @@
             <div class="info-item">
               <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
               <div class="info-details">
-                <h4 data-translate="contact-email">Email</h4>
+                <h4 data-translate="common.contact.email">Email</h4>
                 <p>contact@kasaji.AI</p>
               </div>
             </div>
@@ -257,7 +264,7 @@
             <div class="info-item">
               <div class="info-icon address-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div class="info-details">
-                <h4 data-translate="contact-address">Address</h4>
+                <h4 data-translate="common.contact.address">Address</h4>
                 <p>123 Tech Street, Innovation City</p>
               </div>
             </div>
@@ -267,22 +274,22 @@
             <form id="contactForm" action="/send.php" method="POST" novalidate>
               <div class="form-group">
                 <input id="form-name" type="text" class="form-control" name="name"
-                  data-translate-placeholder="form-name" placeholder="Your Name" required />
+                  data-translate-placeholder="common.form.name" placeholder="Your Name" required />
               </div>
               <div class="form-group">
                 <input id="form-email" type="email" class="form-control" name="email"
-                  data-translate-placeholder="form-email" placeholder="Your Email" required />
+                  data-translate-placeholder="common.form.email" placeholder="Your Email" required />
               </div>
               <div class="form-group">
                 <textarea id="form-message" class="form-control" name="message"
-                  data-translate-placeholder="form-message" placeholder="Your Message" required></textarea>
+                  data-translate-placeholder="common.form.message" placeholder="Your Message" required></textarea>
               </div>
 
               <!-- honeypot -->
               <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
 
               <div class="form-group">
-                <button type="submit" class="submit-btn" data-translate="form-submit">Send Message</button>
+                <button type="submit" class="submit-btn" data-translate="common.form.submit">Send Message</button>
               </div>
             </form>
           </div>

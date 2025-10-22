@@ -1,134 +1,125 @@
+/* ================== Base / Desktop ================== */
+:root{
+  --nav-h: 64px;
+  --z-nav: 1000;   /* النافبار نفسه */
+  --z-panel: 1001; /* لوحة الموبايل */
+  --z-backdrop: 900; /* الخلفية (لو بتستخدمها) */
+}
+
 /* Navbar */
-  .navbar {
-      background: #fff;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-      border-bottom: 1px solid #F3F4F6;
-      position: sticky;
-      top: 0;
-      z-index: 1000
-  }
+.navbar {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+  border-bottom: 1px solid #F3F4F6;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+}
 
-  nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0
-  }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
 
-  .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px
-  }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img { height: 36px; }
 
-  .logo img {
-      height: 36px
-  }
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 15px;
+  position: relative;
+  transition: color .3s, transform .3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width .3s;
+}
+.nav-links a:hover { color: var(--primary-color); transform: translateY(-2px); }
+.nav-links a:hover::after { width: 100%; }
 
-  .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 26px
-  }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-  .nav-links a {
-      text-decoration: none;
-      color: var(--text-gray);
-      font-size: 15px;
-      position: relative;
-      transition: color .3s, transform .3s
-  }
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+.lang-switcher:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
 
-  .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: width .3s
-  }
+.sign-up-btn {
+  background: #1E40AF;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  font-size: 15px;
+}
+.sign-up-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -100%;
+  background: rgba(255, 255, 255, .2);
+  transition: left .3s;
+}
+.sign-up-btn:hover::before { left: 100%; }
+.sign-up-btn:hover {
+  background: var(--dark-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, .3);
+}
 
-  .nav-links a:hover {
-      color: var(--primary-color);
-      transform: translateY(-2px)
-  }
-
-  .nav-links a:hover::after {
-      width: 100%
-  }
-
-  .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px
-  }
-
-  .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: .3s
-  }
-
-  .lang-switcher:hover {
-      background: var(--secondary-color);
-      color: #fff;
-      transform: scale(1.05)
-  }
-
-  .sign-up-btn {
-      background: #1E40AF;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 400;
-      position: relative;
-      overflow: hidden;
-      transition: .3s;
-      font-size: 15px;
-  }
-
-  .sign-up-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      left: -100%;
-      background: rgba(255, 255, 255, .2);
-      transition: left .3s
-  }
-
-  .sign-up-btn:hover::before {
-      left: 100%
-  }
-
-  .sign-up-btn:hover {
-      background: var(--dark-purple);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(139, 92, 246, .3)
-  }
-
-  .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer
-  }
+/* Toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 
 /* Active link in navbar */
 .nav-links a{
   position: relative;
-  color: #475569; /* الرمادي العادي */
+  color: #475569;
   text-decoration: none;
   transition: color .2s ease;
 }
-.nav-links a.is-active{
-  color: #6c4df6; /* بنفسجي خفيف */
-}
+.nav-links a.is-active{ color: #6c4df6; }
 .nav-links a.is-active::after{
   content: "";
   position: absolute;
@@ -138,3 +129,66 @@
   background: linear-gradient(90deg,#6c4df6,#9b8cff);
   border-radius: 999px;
 }
+
+/* ================== Mobile (≤ 768px) ================== */
+@media (max-width: 768px) {
+  .menu-toggle{
+    display: inline-grid;
+    place-items: center;
+    width: 40px; height: 40px;
+    border: 0; background: transparent;
+    font-size: 24px; cursor: pointer; border-radius: 8px;
+  }
+  .menu-toggle:focus-visible{
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  /* نخفي روابط الديسكتوب افتراضياً على الموبايل */
+  .nav-links{ display: none; }
+
+  /* تظهر عند الفتح */
+  .navbar.is-open .nav-links{ display: flex; }
+
+  /* لوحة الموبايل: ثابتة وما بتنزل مع الصفحة */
+  .navbar .nav-links{
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--nav-h);
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    z-index: var(--z-panel);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  .navbar.is-open .nav-links{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* لمس أسهل */
+  .nav-links a{
+    padding: 10px 6px;
+    border-radius: 10px;
+  }
+  .nav-links a:active{ background: #F5F3FF; }
+}
+
+/* ================== Backdrop (اختياري) ==================
+   إذا بدك تعتمد سكربت بدون Backdrop احذف هالقسم.
+*/
+.backdrop{
+  position: fixed; inset: 0;
+  background: transparent; /* لا ضباب ولا تعتيم */
+  pointer-events: none;
+  z-index: var(--z-backdrop);
+}
+.navbar.is-open + .backdrop{ pointer-events: auto; }
+.backdrop[hidden]{ display: none !important; }

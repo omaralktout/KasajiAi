@@ -245,6 +245,36 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
   box-shadow: var(--shadow-sm);
   background: var(--service-cta-hover, #2563eb);
 }
+/* Navbar CTA override */
+.navbar .sign-up-btn{
+  background: #1E40AF;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  font-size: 15px;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+}
+.navbar .sign-up-btn::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -100%;
+  background: rgba(255,255,255,.2);
+  transition: left .3s;
+}
+.navbar .sign-up-btn:hover::before{ left: 100%; }
+.navbar .sign-up-btn:hover{
+  background: var(--dark-purple, #4c1d95);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139,92,246,.3);
+}
 
 
 /* ================= Hero ================= */
@@ -422,15 +452,17 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
 }
 
 .partners-logos {
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   font-size: 36px;
   font-weight: 700;
-  color: #9CA3AF;
-  opacity: .6;
+
+  /* 👇 أزل التعتيم واللون الرمادي */
+  color: inherit;   /* أو initial */
+  opacity: 1;
 }
 
 /* ================= How It Works ================= */
@@ -1564,14 +1596,14 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
 .partners-logos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 18px;
+  gap: 10px;
   justify-items: center;
 }
 
 .partner-card {
   width: 120px;
   height: 120px;
-  background: #f5f6fb;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   display: grid;
@@ -1603,19 +1635,22 @@ html[dir="rtl"] .mobile-menu.open .mobile-menu__panel {
 }
 
 .partner-card img {
-  width: 100%;
+ width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 16px;
-  filter: grayscale(100%);
-  opacity: .9;
+  padding: 2px;
+
+  /* 👇 ألغِ التعتيم والغراي سكيل */
+  filter: none;         /* كان grayscale(100%) */
+  opacity: 1;           /* كان .9 */
   transition: .35s ease;
+  mix-blend-mode: normal; 
 }
 
 .partner-card:hover img {
   transform: scale(1.06);
   opacity: 1;
-  filter: grayscale(0%);
+  filter: none;
 }
 
 /* --- Decorative Floating Squares --- */
