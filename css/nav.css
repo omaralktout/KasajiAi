@@ -143,6 +143,14 @@ nav {
     outline-offset: 2px;
   }
 
+  /* ✅ تعديلات الموبايل فقط */
+  .logo img{
+    height: 40px;   /* صغّر اللوجو على الموبايل */
+    width: auto;    /* يحافظ على النسبة */
+  }
+  nav{ padding: 8px 0; } /* يقلل ارتفاع النافبار شوي */
+  .logo{ gap: 8px; }     /* يخفف المسافة جنب اللوجو */
+
   /* نخفي روابط الديسكتوب افتراضياً على الموبايل */
   .nav-links{ display: none; }
 
@@ -192,8 +200,6 @@ nav {
 .navbar.is-open + .backdrop{ pointer-events: auto; }
 .backdrop[hidden]{ display: none !important; }
 
-
-
 /* لا لفة من فوق، لفة من تحت فقط */
 .navbar{
   top: 0;                 /* يبدأ من أعلى الصفحة */
@@ -219,8 +225,6 @@ nav {
   padding-inline: 20px;
   transition: border-radius .2s ease;
 }
-
-
 
 /* موبايل يبقى فل وِدث */
 @media (max-width: 768px){

@@ -31,11 +31,11 @@ window.translations = {
       "Trusted <span class='em'>Scientific &amp; Tech</span> Partners",
     "home.partners.subtitle":
       "World-class expertise and cutting-edge technologies",
-    hero_title: "Because Every Patient Deserves to Be Heard and Understood",
-    hero_subtitle:
+    "hero_title": "Because Every Patient Deserves to Be Heard and Understood",
+    "hero_subtitle":
       "Improving patient experience is not an option—it’s a human responsibility. We listen, monitor, and transform every voice into better care",
-    hero_btn_signup: "Sign up",
-    hero_btn_demo: "Watch Demo",
+    "hero_btn_signup": "Sign up",
+    "hero_btn_demo": "Watch Demo",
 
     "home.services.title": "Our Core Services",
 
@@ -261,14 +261,14 @@ window.translations = {
     "hero-description-actionsync":
       "A real-time execution layer powered by AI\n to turn insights into immediate actions\n across the care journey.",
 
-    "actionsync-i18n":
+    "actionsync-content-title":
       "Five Execution Nodes: Powering Real-Time\n Patient Experience Transformation",
-    "actionsync-i18n":
+    "actionsync-content-subtitle":
       "Unlock the full potential of patient experience with our intelligent action\n layer—driven by AI and designed to deliver immediate, meaningful impact\n across every touchpoint in the care journey",
 
     "actionsync-node-1-title": "Proactive Patient Outreach &\n Complaint Resolution",
     "actionsync-node-1-desc":
-      "Preemptive intervention reduces escalation and transforms potential complaints into opportunities for increased trust and satisfaction. Anticipate patient concerns before they escalate. Our system identifies early signals of dissatisfaction and initiates timely outreach, turning potential complaints into moments of empathy, trust-building, and loyalty.",
+      "Preemptive intervention reduces escalation and transforms potential complaints into opportunities for increased trust and satisfaction.\n Anticipate patient concerns before they escalate. Our system identifies early signals of dissatisfaction and initiates timely outreach, turning potential complaints into moments of empathy, trust-building, and loyalty.",
     "actionsync-node-1-tag-1": "Alert Automation",
     "actionsync-node-1-tag-2": "Patient Interaction",
 
@@ -327,11 +327,11 @@ window.translations = {
     "home.partners.title":
       "شركاؤنا في الابتكار <span class='em'>العلمي والتقني</span>",
     "home.partners.subtitle": "خبرات بمستوى عالمي وتقنيات في طليعة الابتكار",
-    hero_title: "لأن كل مريض يستحق أن يُصغى إليه ويُفهم",
-    hero_subtitle:
+    "hero_title": "لأن كل مريض يستحق أن يُصغى إليه ويُفهم",
+    "hero_subtitle":
       "تحسين تجربة المريض ليس رفاهية، بل واجب إنساني. الإصغاء والمراقبة وتحويل الآراء إلى رعاية أفضل هو ما يصنع الفرق",
-    hero_btn_signup: "تسجيل دخول",
-    hero_btn_demo: "تعرّف أكثر",
+    "hero_btn_signup": "تسجيل دخول",
+    "hero_btn_demo": "تعرّف أكثر",
     "home.services.title": "حلولنا الأساسية",
 
     "home.service1.label": "ذكاء الاستماع",
