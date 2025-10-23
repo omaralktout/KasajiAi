@@ -87,8 +87,8 @@ body[dir="rtl"] {
 }
 
 .hero-title {
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 80px;
+    font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 20px;
     line-height: 1.2;
