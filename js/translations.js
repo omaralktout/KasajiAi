@@ -525,7 +525,7 @@ window.translations = {
       "تتبّع تأثير كل نقطة تواصل على الانطباع الكلّي",
     "insightai-patient-intelligence-feature-3":
       "ترتيب أولويات التحسين بناءً على الأثر الحقيقي على التجربة",
-    "insightai-predictive-title": "Predictive Insights",
+    "insightai-predictive-title": "التحليلات و الرؤى التنبؤية",
     "insightai-predictive-desc":
       "توقّعات مدعومة بالذكاء الاصطناعي تتنبأ بما قد يحدث لاحقًا — قبل أن تظهر المؤشرات سريريًا أو تشغيليًا.",
     "insightai-predictive-capabilities": "قدرات التنبؤ الأساسية تشمل:",
