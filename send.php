@@ -16,7 +16,7 @@ use PHPMailer\PHPMailer\Exception;
 $MAIL_HOST     = 'smtp.office365.com';
 $MAIL_PORT     = 587; // STARTTLS
 $MAIL_USERNAME = 'mail@kasaji.ai';           // جرّب تغيّرها لــ UPN الفعلي إذا كان مختلف
-$MAIL_PASSWORD = 'N#384748927270ob';         // بس مؤقتًا للاختبار
+$MAIL_PASSWORD = '';         // بس مؤقتًا للاختبار
 $MAIL_FROM     = 'mail@kasaji.ai';
 $MAIL_FROMNAME = 'Website';
 $MAIL_TO       = 'mail@kasaji.ai';
