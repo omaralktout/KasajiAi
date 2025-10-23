@@ -453,6 +453,12 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, 
     opacity: 0;
   }
 }
+/* فقط على الموبايل/التابلت: وسّط أزرار الهيرو */
+@media (max-width: 992px){
+  .hero-buttons{
+    justify-content: center;
+  }
+}
 
 /* ================= Partners ================= */
 .partners {
