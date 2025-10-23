@@ -9,6 +9,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/chat.css" />
 
   <link rel="stylesheet" href="css/home.css" />
 
@@ -23,6 +24,9 @@
 
   <!-- Scripts: احرص يكون translations.js (لو موجود) قبل nav.js -->
   <script defer src="js/translations.js"></script>
+    <script defer src="js/chat.js"></script>
+
+
   <script defer src="js/nav.js"></script>
   <script defer src="js/home.js"></script>
 </head>
@@ -472,6 +476,33 @@
     </div>
   </footer>
 
+  
+  
+  <!-- ودجت الدردشة (مربع صغير دائم بأسفل الصفحة) -->
+  <section id="chat-widget" aria-live="polite">
+    <header id="cw-bar" class="cw-bar" role="button" tabindex="0"
+            aria-expanded="false" aria-controls="cw-panel" title="افتح الدردشة">
+      <div class="cw-bar-title">Kasaji Assistant</div>
+      <button id="cw-toggle" class="cw-bar-toggle" type="button" aria-label="فتح/إغلاق">▾</button>
+    </header>
+
+    <div id="cw-panel" class="cw-panel" hidden>
+      <div class="cw-head">
+        <button id="cw-close" class="cw-close" type="button" aria-label="إغلاق">✕</button>
+      </div>
+
+      <div id="cw-log" class="cw-log">
+        <div class="msg bot">أهلًا! كيف نقدر نساعدك؟</div>
+      </div>
+
+      <form id="cw-form" class="cw-form" autocomplete="off">
+        <input id="cw-input" name="q" type="text" placeholder="اكتب رسالتك..." required />
+        <button id="cw-send" type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+ 
+ 
   <!-- Back to Top -->
   <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
     <i class="fas fa-arrow-up"></i>
