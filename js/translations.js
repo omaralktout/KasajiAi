@@ -7,6 +7,7 @@ window.translations = {
     "nav.insights": "Our Insights",
     "nav.about": "About Us",
     "nav.signup": "Sign up",
+    "lang-common":"العربية",
 
     /* ===== Common (shared) ===== */
     "common.contact.title": "Ready to Transform Your Business?",
@@ -305,6 +306,8 @@ window.translations = {
     "nav.insights": "Our Insights",
     "nav.about": "About Us",
     "nav.signup": "تسجيل دخول",
+    "lang-common":"English",
+
 
     /* ===== Common ===== */
     "common.contact.title": "هل أنت مستعد لتحويل عملك؟",
