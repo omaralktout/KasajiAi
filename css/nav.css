@@ -238,3 +238,58 @@ nav {
     padding-inline: 16px;
   }
 }
+/* ======= Compact phones (<= 360px) ======= */
+@media (max-width: 360px) {
+  nav{ padding: 6px 0; }                /* يقلّل ارتفاع الشريط */
+  .logo img{ height: 34px; }            /* كان 40px */
+  .logo{ gap: 6px; }
+
+  .nav-actions{ gap: 8px; }             /* كان 16px */
+
+  /* زر اللغة: أيقونة + كلمة */
+  .lang-switcher{
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 14px;
+    font-size: 12px;                    /* يصغّر النص */
+    line-height: 1;
+    white-space: nowrap;                /* يمنع اللف */
+  }
+  .lang-switcher i{
+    font-size: 14px;                    /* يصغّر الأيقونة */
+    line-height: 1;
+  }
+  .lang-switcher:hover{ transform: none; } /* بدون تكبير على الموبايل */
+
+  /* زر Sign up */
+  .sign-up-btn{
+    padding: 6px 10px;                  /* يقلّل الارتفاع */
+    font-size: 13px;
+    border-radius: 8px;
+    white-space: nowrap;                /* ما يلف على سطرين */
+  }
+
+  /* أيقونة القائمة */
+  .menu-toggle{ width: 36px; height: 36px; font-size: 22px; }
+}
+
+/* ======= Very small (<= 330px) لضبط 320px ======= */
+@media (max-width: 330px) {
+  .logo img{ height: 30px; }            /* تصغير إضافي للّوجو */
+  .nav-actions{ gap: 6px; }
+
+  .lang-switcher{
+    padding: 3px 7px;
+    font-size: 11.5px;
+    gap: 5px;
+  }
+  .lang-switcher i{ font-size: 13px; }
+
+  .sign-up-btn{
+    padding: 5px 9px;
+    font-size: 12.5px;
+  }
+
+  /* لو حسّيت الشريط لسه عالي شَعرة */
+  nav{ padding: 5px 0; }
+}
