@@ -36,7 +36,7 @@ window.translations = {
     "hero_subtitle":
       "Improving patient experience is not an option—it’s a human responsibility. We listen, monitor, and transform every voice into better care",
     "hero_btn_signup": "Sign up",
-    "hero_btn_demo": "Watch Demo",
+    "hero_btn_demo": "Experience Management",
 
     "home.services.title": "Our Core Services",
 

@@ -1777,3 +1777,15 @@ html.is-home .navbar .nav-links a.is-active::after{ content:none !important; }
   padding-top: 175px;   /* عدّل الرقم حسب ما يلزم */
   padding-bottom: 100px;
 }
+/* Override: place Back-to-Top on the left (LTR & RTL) */
+.back-to-top {
+  inset-inline-start: 30px !important;
+  inset-inline-end: auto !important;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    inset-inline-start: 20px !important;
+    inset-inline-end: auto !important;
+  }
+}
