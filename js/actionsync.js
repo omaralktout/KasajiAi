@@ -173,3 +173,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!navbar) return;
     navbar.style.boxShadow = window.scrollY > 10 ? '0px 4px 12px rgba(0,0,0,0.1)' : '0px 1px 2px rgba(0,0,0,0.05)';
   });
+  // Contact form (as-is)
+  const form = document.getElementById('contactForm');
+  if (form){
+    form.setAttribute('action','/send.php');
+    if (!form.querySelector('input[name="company"]')){
+      const hp=document.createElement('input'); hp.type='text'; hp.name='company';
+      hp.style.display='none'; hp.tabIndex=-1; hp.autocomplete='off'; form.appendChild(hp);
+    }
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = form.querySelector('.submit-btn'); const original = btn?btn.textContent:'';
+      if (btn){ btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentLanguage==='ar'?'جارٍ الإرسال...':'Sending...'); btn.disabled = true; }
+      try{
+        const res = await fetch(form.action,{ method:'POST', body:new FormData(form) });
+        const txt = (await res.text()).trim();
+        if (res.ok && txt === 'OK'){ form.reset(); }
+      } catch(err){ console.error(err); }
+      finally{ if (btn){ btn.textContent = original; btn.disabled = false; } }
+    });
+  }

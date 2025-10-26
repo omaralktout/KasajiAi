@@ -152,7 +152,7 @@ window.translations = {
     /*==========Voice========*/
     "Voice-hero-title": "Voice Pulse",
     "Voice-hero-description":
-      "A continuous listening framework that captures\n multi-source feedback and turns it into measurable insights across the care journey.",
+      "A continuous listening framework that captures\n multi-source feedback and turns it into measurable insights across the care journey",
     "voice-features-title": "Our Key Features",
     "voice-feature1-title": "Patient and Carer Experience Surveys",
     "voice-feature1-description":
@@ -208,7 +208,7 @@ window.translations = {
 
     "insightai-hero-title": "InsightAI",
     "insightai-hero-description":
-      "Advanced insights platform connecting\n experience to behavior, outcomes, and\n future expectations.",
+      "Advanced insights platform connecting\n experience to behavior, outcomes, and\n future expectations",
     "insightai-intelligence-layer-text":
       "A next-generation intelligence layer that transforms feedback into foresight and action.",
     "insightai-patient-feedback-title": "Patient Feedback Insights",
@@ -260,7 +260,7 @@ window.translations = {
       
     "hero-title-actionsync": "ActionSync",
     "hero-description-actionsync":
-      "A real-time execution layer powered by AI\n to turn insights into immediate actions\n across the care journey.",
+      "A real-time execution layer powered by AI\n to turn insights into immediate actions\n across the care journey",
 
     "actionsync-content-title":
       "Five Execution Nodes: Powering Real-Time\n Patient Experience Transformation",
