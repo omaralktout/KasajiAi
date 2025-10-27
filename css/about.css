@@ -105,7 +105,7 @@
 
   .hero-image img {
       max-width: 86%;
-      height: auto
+      height: 220px;
   }
 
   /* ============ Hero Decorative Squares ============ */
@@ -132,27 +132,27 @@
 
   /* بدّل اللون بسرعة لكل مربع إذا بدك */
   .text-square-1 {
-      background: #C4B5FD;
+      background: #E5E7EB;
   }
 
   /* بنفسجي فاتح */
   .text-square-2 {
-      background: #A7F3D0;
+      background: #E5E7EB;
   }
 
   /* نعناعي فاتح */
   .text-square-3 {
-      background: #FDE68A;
+      background: #E5E7EB;
   }
 
   /* أصفر فاتح */
   .text-square-4 {
-      background: #FCA5A5;
+      background: #E5E7EB;
   }
 
   /* وردي فاتح */
   .text-square-5 {
-      background: #93C5FD;
+      background: #E5E7EB;
   }
 
   /* أزرق فاتح */
@@ -304,193 +304,6 @@
           bottom: -32px;
       }
   }
-/* ============ Timeline Base ============ */
-.timeline{
-  --pair-gap: 100px;            /* ← فراغ ثابت بين كل صفّين */
-  --pair-gap-mobile: 32px;     /* ← (تعليق) فراغ رأسي بين الصفوف على الموبايل */
-  --col-gap: 28px;
-
-  /* (تعليق) تحكم عام بحجم الصور الافتراضي */
-  --media-w: 60%;
-
-  /* (تعليق مهم) مسافة الصور عن العمود (السطر بالنص):
-     - اليمين: للصفوف اللي فيها الصورة يمين (leftCard = card يسار / media يمين)
-     - اليسار: للصفوف اللي فيها الصورة يسار (rightCard = card يمين / media يسار)
-     سالب = أقرب للعمود، موجب = أبعد */
-  --media-shift-right: 25px;   /* ← صورة اليمين */
-  --media-shift-left:  220px;  /* ← صورة اليسار */
-
-  /* (تعليق مهم) مسافة الكروت عن العمود بنفس منطق الصور:
-     - الكارد يمين (صفوف .leftCard): من --card-shift-right
-     - الكارد يسار (صفوف .rightCard): من --card-shift-left */
-  --card-shift-right: 30px;    /* ← كارد العمود اليمين */
-  --card-shift-left:  25px;    /* ← كارد العمود اليسار */
-
-  --media-radius: 16px;
-  --card-radius: 16px;
-  --shadow-card: 0 8px 30px rgba(0,0,0,.08);
-  --shadow-media: 0 8px 30px rgba(0,0,0,.06);
-  --text-dark: #0f172a;
-  --text-gray: #475569;
-  --gradient: linear-gradient(90deg,#6366f1,#8b5cf6);
-  --line: linear-gradient(180deg,#c4b5fd 0%, #93c5fd 50%, #5eead4 100%);
-  background:#f9fafc; padding:68px 0;
-}
-.tl-container{ width:min(1120px, 92vw); margin-inline:auto; }
-.tl-header{ text-align:center; margin-bottom:44px; }
-.tl-title{
-  font: 700 34px/1.2 Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color:var(--text-dark); display:inline-block; position:relative; margin:0 0 16px;
-}
-.tl-title::after{
-  content:""; position:absolute; left:50%; transform:translateX(-50%);
-  bottom:-10px; width:72px; height:4px; background:var(--gradient); border-radius:2px;
-}
-.tl-subtitle{
-  margin:0 auto; max-width:760px; font: 400 18px/1.6 Inter, system-ui;
-  color:var(--text-gray);
-}
-
-/* ============ Grid wrapper + center line ============ */
-.tl-wrapper{ position:relative; }
-.tl-centerline{
-  position:absolute; inset-block:0; left:50%; transform:translateX(-50%);
-  width:3px; background:var(--line); border-radius:999px; opacity:.95;
-  box-shadow:0 0 0 2px rgba(0,0,0,0.02) inset;
-}
-
-/* ============ Row ============ */
-.tl-row{
-  display:grid;
-  grid-template-columns: 1fr 1fr;     /* عمودين متساويين */
-  align-items:center;                 /* الكارد والصورة نفس المستوى أفقيًا */
-  column-gap: var(--col-gap);
-  row-gap: 0;
-  margin-bottom: var(--pair-gap);     /* فراغ عمودي متساوٍ */
-
-  /* افتراضيات قابلة للتخصيص لكل صف (تقدر تغيّرها لكل #nodeX لو حبيت) */
-  --media-w-row: var(--media-w);
-
-  /* (تعليق) إعدادات الأنيميشن/الستاجر */
-  --delay: .00s;
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
-}
-.tl-row.inview{
-  opacity: 1;
-  transform: none;
-}
-
-/* ترتيب الأعمدة */
-.tl-row.leftCard  > .tl-card { grid-column: 1; }
-.tl-row.leftCard  > .tl-media{ grid-column: 2; }
-.tl-row.rightCard > .tl-media{ grid-column: 1; }
-.tl-row.rightCard > .tl-card { grid-column: 2; }
-
-/* ============ Card ============ */
-.tl-card{
-  background:#fff;
-  border-radius: var(--card-radius);
-  padding:24px;
-  box-shadow: var(--shadow-card);
-  /* (تعليق) ستاجر: الكارد يظهر بعد الصورة بقليل */
-  opacity: 0; transform: translateY(12px);
-  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
-  transition-delay: calc(var(--delay, .00s) + .12s);
-}
-.tl-row.inview .tl-card{ opacity:1; transform:none; }
-
-.tl-icon{
-  width:52px; height:52px; border-radius:12px; color:#fff;
-  display:flex; align-items:center; justify-content:center; font-size:21px;
-  margin-bottom:12px; background: var(--theme-gradient, linear-gradient(90deg,#8B5CF6,#C084FC));
-}
-.tl-card-title{
-  margin:0 0 10px; color:var(--text-dark);
-  font:600 22px/1.35 Inter, system-ui;
-}
-.tl-card-desc{
-  margin:0 0 14px; color:var(--text-gray);
-  font:400 15.5px/1.6 Inter, system-ui;
-}
-.tl-tags{ display:flex; flex-wrap:wrap; gap:8px; }
-.tl-tag{
-  padding:6px 10px; border-radius:20px; font:500 13.5px/1 Inter, system-ui;
-  background: var(--tag-bg,#F3E8FF); color: var(--tag-color,#6D28D9);
-}
-
-/* ============ Media ============ */
-.tl-media{
-  border-radius: var(--media-radius);
-  overflow:hidden; background:#E5E7EB; box-shadow: var(--shadow-media);
-  aspect-ratio: 16 / 10;               /* نسبة ثابتة */
-  width: var(--media-w-row);           /* ← حجم الصورة (تقدر تغيره على #nodeX) */
-  /* (تعليق) ستاجر: الصورة تظهر أولاً */
-  opacity: 0; transform: translateY(12px);
-  transition: opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1);
-  transition-delay: var(--delay, .00s);
-}
-.tl-row.inview .tl-media{ opacity:1; transform:none; }
-
-/* (تعليق مهم) تمركز الصورة وقربها/بعدها من العمود من متغيّرين موحّدين:
-   --media-shift-right لصور اليمين  |  --media-shift-left لصور اليسار */
-.tl-row.leftCard  .tl-media{ justify-self:start; margin-inline-start: var(--media-shift-right); }
-.tl-row.rightCard .tl-media{ justify-self:end;   margin-inline-end:   var(--media-shift-left); }
-
-/* (تعليق مهم) تمركز الكارد وقربه/بعده من العمود من متغيّرين موحّدين:
-   --card-shift-right لكروت العمود اليمين | --card-shift-left لكروت العمود اليسار */
-.tl-row.leftCard  .tl-card{ justify-self:end;   margin-inline-end:   var(--card-shift-right); }
-.tl-row.rightCard .tl-card{ justify-self:start; margin-inline-start: var(--card-shift-left); }
-
-.tl-media > img{
-  width:100%; height:100%; object-fit:cover; display:block; opacity:.9;
-  transition:opacity .25s ease;
-}
-.tl-media:hover > img{ opacity:1; }
-
-/* ============ Themes ============ */
-.theme-amber { --theme-gradient:linear-gradient(90deg,#f59e0b 0%, #fbbf24 100%); --tag-bg:#FFF7E6; --tag-color:#b45309; }
-.theme-purple{ --theme-gradient:linear-gradient(90deg,#8B5CF6 0%, #C084FC 100%); --tag-bg:#F3E8FF; --tag-color:#6D28D9; }
-.theme-teal  { --theme-gradient:linear-gradient(90deg,#14b8a6 0%, #2dd4bf 100%); --tag-bg:#E6FFFB; --tag-color:#0f766e; }
-.theme-rose  { --theme-gradient:linear-gradient(90deg,#60A5FA 0%, #818CF8 100%); --tag-bg:#E0E7FF; --tag-color:#1D4ED8; }
-.theme-slate { --theme-gradient:linear-gradient(90deg,#818CF8 0%, #C084FC 100%); --tag-bg:#E0E7FF; --tag-color:#7E22CE; }
-
-/* ============ Responsive ============ */
-@media (max-width: 900px){
-  /* Grid: عمود واحد وتوسيط عام */
-  .timeline .tl-row{
-    grid-template-columns: 1fr !important;
-    justify-items: center !important;
-    row-gap: 12px;
-    margin-bottom: var(--pair-gap-mobile);
-    /* صفر أي إزاحات عالموبايل */
-    --media-shift-left: 0;
-    --media-shift-right: 0;
-    --card-shift-left: 0;
-    --card-shift-right: 0;
-  }
-
-  /* اخفي خط النص والصور */
-  .timeline .tl-centerline{ display:none !important; }
-  .timeline .tl-media{ display:none !important; }
-
-  /* الكارد يأخذ العمود الوحيد ويتوسّط */
-  .timeline .tl-row > .tl-card{
-    grid-column: 1 / -1 !important;
-    justify-self: center !important;
-    width: min(620px, 92vw);
-    max-width: 100%;
-    margin: 0 auto !important;
-  }
-
-  /* ألغِ أي هوامش اتجاهية موروثة */
-  .timeline .tl-row.leftCard  .tl-card,
-  .timeline .tl-row.rightCard .tl-card{
-    margin-inline-start: 0 !important;
-    margin-inline-end:   0 !important;
-  }
-}
 
 
   /* ================= Contact & Footer ================= */
@@ -855,6 +668,155 @@
     border-bottom: 1px solid #F3F4F6; /* خط خفيف للموبايل فقط (احذفها لو مش بدك) */
     padding-inline: 16px;
   }
+}
+
+
+/* ============ Tokens ============ */
+:root{
+  --about-bg: #F9FAFB;       /* خلفية السيكشن */
+  --about-text: #111827;
+  --about-muted:#4B5563;
+  --about-border:#E5E7EB;
+  --about-primary:#7C3AED;   /* بنفسجي العنوان */
+  --about-shadow:0 18px 36px rgba(0,0,0,.08);
+  --container:1200px;
+}
+
+/* أساسيات خفيفة */
+body{color:var(--about-text);line-height:1.6;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* ============ About Intro Section ============ */
+.about-intro{
+  background:var(--about-bg);
+  padding:36px 0 28px;
+}
+
+/* الشريط العلوي: شعار فوق العنوان — المحاذاة حسب dir */
+.about-intro__top{
+  display:flex;
+  flex-direction:column;
+  gap:8px;                 /* مسافة بين الشعار والعنوان */
+  margin-bottom:12px;
+}
+
+/* شعار KASAJI.AI كصورة (55px) */
+.about-kicker-img{
+  height:55px;
+  width:auto;
+  display:block;
+}
+
+/* عنوان بنفسجي */
+.about-heading{
+  color:var(--about-primary);
+  font-weight:700;
+  font-size:28px;
+  margin:0;
+}
+
+/* محاذاة ديناميكية حسب اتجاه الصفحة */
+body[dir="ltr"] .about-intro__top{ align-items:flex-end; }   /* إنجليزي: يمين */
+body[dir="ltr"] .about-heading{ text-align:right; }
+
+body[dir="rtl"] .about-intro__top{ align-items:flex-start; } /* عربي: يسار */
+body[dir="rtl"] .about-heading{ text-align:left; }
+
+/* شبكة المحتوى: صورة يسار / نص يمين */
+.about-intro__grid{
+  display:grid; align-items:center; gap:32px;
+  grid-template-columns: 1.1fr 1fr; /* الصورة أوسع قليلاً */
+}
+
+/* إطار الصورة — بسيط بلا أوفرلاي */
+.about-image-frame{
+  width:100%; border:1px solid var(--about-border);
+  border-radius:16px; background:#fff; overflow:hidden;
+  box-shadow:var(--about-shadow);
+}
+.about-image-frame img{ width:100%; height:auto; display:block; object-fit:cover; }
+
+/* النص */
+.about-copy p{ margin:6px 0; color:var(--about-muted); font-size:16.5px; }
+.t-strong{ font-weight:700; color:#1F2937; }
+
+/* ============ What We Aim To Achieve ============ */
+.about-aims{ background:#fff; padding:28px 0 56px; }
+.aims-title{ text-align:center; font-size:24px; margin:0 0 18px; }
+.aims-grid{ display:grid; gap:16px; grid-template-columns:repeat(3,1fr); }
+.aim-card{
+  border:1px solid var(--about-border); border-radius:16px;
+  background:#fff; padding:18px; box-shadow:var(--about-shadow);
+}
+.aim-card h4{ margin:0 0 6px; font-size:18px; }
+.aim-card p{ margin:0; color:var(--about-muted); font-size:15.5px; }
+
+/* ============ Responsive ============ */
+@media (max-width: 992px){
+  .about-intro__grid{ grid-template-columns:1fr; gap:20px; }
+  .about-heading{ font-size:26px; }
+}
+@media (max-width: 768px){
+  .about-heading{ font-size:24px; }
+}
+    
+
+/* ---------- ABOUT TOP OVERRIDES (put at the very end) ---------- */
+
+/* الشعار فوق العنوان – ثابت 55px */
+.about-intro__top{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:12px;
+  align-items:flex-end !important;  /* LTR = يمين / RTL = يسار (فيزيائي) */
+}
+.about-kicker-img{ height:55px; width:auto; display:block; }
+
+/* لون وحجم العنوان كالمعتاد */
+.about-intro .about-heading{
+  color:var(--about-primary, #7C3AED);
+  font-weight:500;
+  font-size:28px;
+  margin:0;
+}
+
+/* محاذاة العنوان بالاتجاه المطلوب */
+html[dir="ltr"] .about-intro .about-heading{ text-align:right !important; } /* إنجليزي: يمين */
+html[dir="rtl"] .about-intro .about-heading{ text-align:left  !important; } /* عربي: يسار */
+
+
+/* === Nudge title only when page is Arabic (RTL) === */
+/* غيّر القيمة حسب ما بدك (مثال: 12px أو 24px) */
+:root{
+  --about-title-shift-rtl: 140px;  /* 0 = بدون إزاحة */
+}
+
+html[dir="rtl"] .about-intro .about-heading{
+  position: relative;
+  transform: translateX(var(--about-title-shift-rtl));
+  will-change: transform;
+}
+
+
+/* صفر أي تزيين حوالين الصورة */
+.about-image-frame{
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;   /* ما يقصّ الحواف */
+  padding: 0 !important;
+}
+
+.about-image-frame img{
+  display: block;      /* يشيل فراغ الـ inline-img */
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-shadow: none !important;
+  background: transparent !important;
+  filter: none !important;
 }
 
 

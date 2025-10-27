@@ -7,7 +7,7 @@ window.translations = {
     "nav.insights": "Our Insights",
     "nav.about": "About Us",
     "nav.signup": "Sign up",
-    "lang-common":"العربية",
+    "lang-common": "العربية",
 
     /* ===== Common (shared) ===== */
     "common.contact.title": "Ready to Transform Your Business?",
@@ -32,11 +32,11 @@ window.translations = {
       "Trusted <span class='em'>Scientific &amp; Tech</span> Partners",
     "home.partners.subtitle":
       "World-class expertise and cutting-edge technologies",
-    "hero_title": "Because Every Patient Deserves to Be Heard and Understood",
-    "hero_subtitle":
+    hero_title: "Because Every Patient Deserves to Be Heard and Understood",
+    hero_subtitle:
       "Improving patient experience is not an option—it’s a human responsibility. We listen, monitor, and transform every voice into better care",
-    "hero_btn_signup": "Sign up",
-    "hero_btn_demo": "Experience Management",
+    hero_btn_signup: "Sign up",
+    hero_btn_demo: "Experience Management",
 
     "home.services.title": "Our Core Services",
 
@@ -257,7 +257,6 @@ window.translations = {
 
     /*========= ActionSync =========*/
 
-      
     "hero-title-actionsync": "ActionSync",
     "hero-description-actionsync":
       "A real-time execution layer powered by AI\n to turn insights into immediate actions\n across the care journey",
@@ -267,7 +266,8 @@ window.translations = {
     "actionsync-content-subtitle":
       "Unlock the full potential of patient experience with our intelligent action\n layer—driven by AI and designed to deliver immediate, meaningful impact\n across every touchpoint in the care journey",
 
-    "actionsync-node-1-title": "Proactive Patient Outreach &\n Complaint Resolution",
+    "actionsync-node-1-title":
+      "Proactive Patient Outreach &\n Complaint Resolution",
     "actionsync-node-1-desc":
       "Preemptive intervention reduces escalation and transforms potential complaints into opportunities for increased trust and satisfaction.\n Anticipate patient concerns before they escalate. Our system identifies early signals of dissatisfaction and initiates timely outreach, turning potential complaints into moments of empathy, trust-building, and loyalty.",
     "actionsync-node-1-tag-1": "Alert Automation",
@@ -296,6 +296,41 @@ window.translations = {
       "Guide patients through their care journey with intelligent, real-time navigation. From appointment scheduling to follow-up reminders, this agent reduces confusion, improves adherence, and enhances continuity of care.",
     "actionsync-node-5-tag-1": "Journey Mapping",
     "actionsync-node-5-tag-2": "Autonomous Agents",
+
+    /*========= About =========*/
+      "hero-title-about":"About us",
+     "hero-description-about":"From Jordan to the world, we shape the future of smart healthcare",
+
+    "about.heading": "Toward smarter and more human-centered healthcare",
+
+    "about.p1.a": "We are a",
+    "about.p1.b": "Jordan-based startup with a global mindset",
+    "about.p1.c": "and a mission rooted in regional impact.",
+
+    "about.p2.a":
+      "Our team brings together diverse expertise from around the world, united by a shared purpose:",
+    "about.p2.b": "To empower healthcare providers",
+    "about.p2.c":
+      "across the Middle East to elevate patient and physician experiences through cutting-edge experience management and AI-driven solutions.",
+
+    "about.p3.a": "At the heart of our work is a commitment to",
+    "about.p3.b": "improving health outcomes and patient satisfaction.",
+
+    "about.p4.a":
+      "We believe that by transforming how healthcare organizations understand and respond to patient needs, we can help build",
+    "about.p4.b":
+      "a more responsive, compassionate, and effective healthcare ecosystem.",
+
+    "about.aims.title": "What We Aim To Achieve",
+    "about.aims.ambition.title": "Ambition",
+    "about.aims.ambition.desc":
+      "To revolutionize patient and physician experience across the Middle East by becoming the most trusted partner for healthcare providers seeking intelligent, data-driven, and human-centered solutions.",
+    "about.aims.vision.title": "Vision",
+    "about.aims.vision.desc":
+      "To be the leading provider of experience management solutions in the Middle East, recognized for transforming healthcare delivery through data-driven insights, innovative technologies, and exceptional customer engagement.",
+    "about.aims.mission.title": "Mission",
+    "about.aims.mission.desc":
+      "To empower healthcare providers in the Middle East to enhance patient experiences through innovative experience management and AI solutions—ultimately improving health outcomes, operational efficiency, and patient satisfaction.",
   },
 
   ar: {
@@ -306,8 +341,7 @@ window.translations = {
     "nav.insights": "Our Insights",
     "nav.about": "About Us",
     "nav.signup": "تسجيل دخول",
-    "lang-common":"English",
-
+    "lang-common": "English",
 
     /* ===== Common ===== */
     "common.contact.title": "هل أنت مستعد لتحويل عملك؟",
@@ -322,7 +356,7 @@ window.translations = {
     "common.form.message": "رسالتك",
     "common.form.submit": "أرسل الرسالة",
     "common.footer.desc": "تحويل الأعمال من خلال رؤى عملاء ذكية",
-    "common.footer.copyright": "© 2025 Kasaji.AI. جميع الحقوق محفوظة.",
+    "common.footer.copyright": "© 2025 Kasaji.AI. All rights reserved.",
 
     /* ===== Home ===== */
     "home.hero.title": "Kasaji.AI",
@@ -330,11 +364,11 @@ window.translations = {
     "home.partners.title":
       "شركاؤنا في الابتكار <span class='em'>العلمي والتقني</span>",
     "home.partners.subtitle": "خبرات بمستوى عالمي وتقنيات في طليعة الابتكار",
-    "hero_title": "لأن كل مريض يستحق أن يُصغى إليه ويُفهم",
-    "hero_subtitle":
+    hero_title: "لأن كل مريض يستحق أن يُصغى إليه ويُفهم",
+    hero_subtitle:
       "تحسين تجربة المريض ليس رفاهية، بل واجب إنساني. الإصغاء والمراقبة وتحويل الآراء إلى رعاية أفضل هو ما يصنع الفرق",
-    "hero_btn_signup": "تسجيل دخول",
-    "hero_btn_demo": "تعرّف أكثر",
+    hero_btn_signup: "تسجيل دخول",
+    hero_btn_demo: "تعرّف أكثر",
     "home.services.title": "حلولنا الأساسية",
 
     "home.service1.label": "ذكاء الاستماع",
@@ -485,7 +519,8 @@ window.translations = {
       "تحويل التجارب الفردية إلى رؤى تُسهم في تشكيل السياسات وتصميم الخدمات",
 
     // Feature 4
-    "voice-feature4-title": "المتابعة الذكية للسوشيال ميديا وتحليل المشاعر الرقمية",
+    "voice-feature4-title":
+      "المتابعة الذكية للسوشيال ميديا وتحليل المشاعر الرقمية",
     "voice-feature4-description":
       "نظام يراقب ما يُقال عنك عبر المنصات الاجتماعية والمجتمعات الإلكترونية، ويحوّل الآراء العفوية — حتى غير الموجَّهة لك — إلى إشارات يمكن التصرف بناءً عليها.",
     "voice-feature4-item1":
@@ -514,7 +549,8 @@ window.translations = {
       "استخراج الأنماط المتكررة من البيانات الكمية والنوعية",
     "insightai-patient-feedback-feature-2":
       "ربط الرؤى بالسياق السريري، ونوع الخدمة، ومراحل الرعاية",
-    "insightai-patient-feedback-feature-3": "تحديد الفجوات بين التوقعات والنتائج الفعلية",
+    "insightai-patient-feedback-feature-3":
+      "تحديد الفجوات بين التوقعات والنتائج الفعلية",
     "insightai-patient-feedback-feature-4":
       "تحويل الملاحظات المفتوحة إلى إشارات منظمة قابلة للتنفيذ والتحسين",
     "insightai-sentiment-title": "تحليل المشاعر والانفعالات",
@@ -523,7 +559,8 @@ window.translations = {
     "insightai-patient-intelligence-title": "رؤى معمّقة حول رحلة المريض",
     "insightai-patient-intelligence-desc":
       "تحليل يجمع بين الإشارات السلوكية والانطباعات الشخصية وتفاعلات الخدمة للكشف عن الطبقات الأعمق في رحلة الرعاية.",
-    "insightai-patient-intelligence-feature-1": "ربط الملاحظات بأنماط الاستخدام والتفاعل",
+    "insightai-patient-intelligence-feature-1":
+      "ربط الملاحظات بأنماط الاستخدام والتفاعل",
     "insightai-patient-intelligence-feature-2":
       "تتبّع تأثير كل نقطة تواصل على الانطباع الكلّي",
     "insightai-patient-intelligence-feature-3":
@@ -535,7 +572,8 @@ window.translations = {
     "insightai-predictive-feature-1":
       "التنبّه لاحتمالات تراجع التجربة قبل أن تتحوّل إلى مشكلة",
     "insightai-predictive-feature-2": "توقّع تغيّر مستويات الرضا قبل حدوثها",
-    "insightai-predictive-feature-3": "دعم القرارات الاستباقية لتحسين جودة الخدمات",
+    "insightai-predictive-feature-3":
+      "دعم القرارات الاستباقية لتحسين جودة الخدمات",
     "insightai-perspective-title": "رؤى مستقبلية لتحسين الرعاية",
     "insightai-perspective-feature-1":
       "تقارن بين توقعات المريض والواقع الفعلي للخدمة المقدّمة",
@@ -548,13 +586,13 @@ window.translations = {
     "insightai-perspective-desc":
       "طبقة ذكاء من الجيل التالي تحوّل الملاحظات إلى رؤية مستقبلية وإجراء.",
 
-
-     /*========= ActionSync =========*/
-      "hero-title-actionsync": "ActionSync",
+    /*========= ActionSync =========*/
+    "hero-title-actionsync": "ActionSync",
     "hero-description-actionsync":
       "طبقة تنفيذ فورية مدعومة بالذكاء الاصطناعي لتحويل الرؤى إلى إجراءات فورية عبر رحلة الرعاية بأكملها",
 
-    "actionsync-content-title": "خمس نقاط تنفيذية: تقود التحوّل الفوري\n في تجربة المريض",
+    "actionsync-content-title":
+      "خمس نقاط تنفيذية: تقود التحوّل الفوري\n في تجربة المريض",
     "actionsync-content-subtitle":
       "أطلق طاقة تجربة المريض إلى أقصاها عبر منصّتنا الذكية المدعومة بالذكاء الاصطناعي، المصمّمة لتُحدث فرقًا حقيقيًا وفوريًا في كل لحظة من رحلة الرعاية.",
 
@@ -576,7 +614,8 @@ window.translations = {
     "actionsync-node-3-tag-1": "مكالمات آلية بذكاء اصطناعي",
     "actionsync-node-3-tag-2": "دردشة ذكية",
 
-    "actionsync-node-4-title": "وكلاء تنسيق الرعاية المدعومون بالذكاء الاصطناعي",
+    "actionsync-node-4-title":
+      "وكلاء تنسيق الرعاية المدعومون بالذكاء الاصطناعي",
     "actionsync-node-4-desc":
       "قم بأتمتة تنسيق العمل بين الفرق السريرية والإدارية والداعمة بسهولة وذكاء. يعمل وكلاء تنسيق الرعاية المدعومون بالذكاء الاصطناعي على إزالة العوائق وتقليل التأخيرات ومنع تضارب القرارات، لضمان تقديم رعاية متكاملة، منسّقة، وسريعة الاستجابة.",
     "actionsync-node-4-tag-1": "تنسيق الفرق",
@@ -588,8 +627,38 @@ window.translations = {
     "actionsync-node-5-tag-1": "أنظمة تعمل تلقائيًا",
     "actionsync-node-5-tag-2": "رسم مسار رحلة المريض",
 
+    /*========= About =========*/
+     "hero-title-about":"من نحن",
+     "hero-description-about":"من الأردن إلى العالم، نصنع مستقبل الرعاية الذكية",
+    "about.heading": "نحو رعاية صحية أذكى وأكثر إنسانية",
 
+    "about.p1.a": "نحن",
+    "about.p1.b": "شركة ناشئة مقرّها الأردن، بهويّة عالمية ",
+    "about.p1.c": "ورسالة تركّز على إحداث أثر حقيقي في المنطقة.",
 
+    "about.p2.a":
+      "يجمع فريقنا خبرات متنوّعة من مختلف أنحاء العالم، متحدين بهدف واحد مشترك:",
+    "about.p2.b": "الارتقاء بتجربة المرضى",
+    "about.p2.c":
+      "وتمكين مقدّمي الرعاية عبر حلول ذكية ومبتكرة.",
+
+    "about.p3.a": "تمكين مقدّمي الرعاية الصحية في الشرق الأوسط من الارتقاء بتجربة المرضى والأطباء، من خلال حلول متقدّمة لإدارة التجارب مدعومة بالذكاء الاصطناعي والتقنيات الحديثة.",
+    "about.p3.b": "",
+
+    "about.p4.a":
+      "في صميم عملنا التزامٌ راسخ بتحسين النتائج الصحية وتعزيز رضا المرضى. نؤمن بأنّ إعادة صياغة طريقة فهم مؤسّسات الرعاية الصحية لاحتياجات المرضى واستجابتها لها،",
+    "about.p4.b": "تمثّل الخطوة الأولى نحو بناء منظومة رعاية أكثر استجابةً، وتعاطفًا، وكفاءة. ",
+
+    "about.aims.title": "ما الذي نهدف إلى تحقيقه",
+    "about.aims.ambition.title": "طموحنا",
+    "about.aims.ambition.desc":
+      "إحداث نقلة نوعية في تجربة المرضى والأطباء في الشرق الأوسط، وأن نكون الشريك الأكثر ثقة لمقدّمي الرعاية الصحية الباحثين عن حلول ذكية قائمة على البيانات ومتمحورة حول الإنسان.",
+    "about.aims.vision.title": "رؤيتنا",
+    "about.aims.vision.desc":
+      "أن نكون المزود الرائد لحلول إدارة التجربة في الشرق الأوسط، والمتميّز في تحويل تقديم الرعاية الصحية عبر الرؤى المبنية على البيانات، والتقنيات المبتكرة، وتفاعل العملاء الاستثنائي.",
+    "about.aims.mission.title": "مهمتنا",
+    "about.aims.mission.desc":
+      "تمكين مقدّمي الرعاية الصحية في الشرق الأوسط من تعزيز تجارب المرضى من خلال حلول إدارة تجربة مبتكرة وتقنيات ذكاء اصطناعي — بما يحقق نتائج صحية أفضل وكفاءة تشغيلية أعلى ورضا أكبر.",
   },
 };
 

@@ -1050,3 +1050,8 @@ footer.animate .copyright {
     padding-inline: 16px;
   }
 }
+
+
+body[dir="rtl"] {
+  font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+}

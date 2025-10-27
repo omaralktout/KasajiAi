@@ -1029,3 +1029,8 @@ html[dir="rtl"] .centered-section .section-features li::before {
     padding-inline: 16px;
   }
 }
+
+
+body[dir="rtl"] {
+  font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+}
