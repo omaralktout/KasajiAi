@@ -293,3 +293,18 @@ nav {
   /* لو حسّيت الشريط لسه عالي شَعرة */
   nav{ padding: 5px 0; }
 }
+
+
+/* === Force 15px for desktop nav links (LTR + RTL) === */
+@media (min-width: 992px) {
+  .nav-links a {
+    font-size: 17px !important;
+    line-height: 1.6;         /* مريحة للقراءة */
+    font-weight: 400;         /* بين العادي والبولد (اختياري) */
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+  html[dir="rtl"] .nav-links a {
+    font-family: 'Tajawal', 'Noto Sans Arabic', system-ui, sans-serif; /* لو بدك توحّد مظهر العربي */
+  }
+}

@@ -823,3 +823,99 @@ html[dir="rtl"] .about-intro .about-heading{
 body[dir="rtl"] {
   font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
 }
+
+
+/* ===== Aims section tweaks ===== */
+.aims-title{
+  /* أكبر شوي + بين البولد والعادي */
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 325;              /* مش بولد */
+  line-height: 1.25;
+  text-align: center;
+  margin: 0 0 22px;
+  letter-spacing: .2px;
+}
+
+.aims-grid{
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.aim-card{
+  background: #fff;
+  border: 1px solid var(--about-border, #E5E7EB);
+  border-radius: 16px;
+  padding: 22px 18px;
+  box-shadow: var(--about-shadow, 0 18px 36px rgba(0,0,0,.08));
+  text-align: center;            /* كل المحتوى بالسنتر RTL/LTR */
+}
+
+/* أيقونة دائرية خفيفة */
+.aim-icon{
+  width: 48px; height: 48px;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+  background: #EEF2FF;
+  color: #4F46E5;
+  display: grid; place-items: center;
+}
+.aim-icon svg{ width: 24px; height: 24px; display:block }
+
+/* عناوين ونصوص */
+.aim-card__title{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 4px 0 6px;
+}
+.aim-card__desc{
+  font-size: 15.5px;
+  color: var(--about-muted, #4B5563);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .aims-grid{ grid-template-columns: 1fr; }
+  .aims-title{ margin-bottom: 18px; }
+}
+/* === Aim icon gradient + white glyph === */
+.aim-icon{
+  background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+  color: #fff !important;         /* لـ <i> من Font Awesome */
+}
+
+/* دعم لكل من FA <i> و SVG إن وُجد */
+.aim-icon i,
+.aim-icon svg{
+  color: #fff !important;
+  fill: #fff !important;
+  width: 24px; height: 18px;      /* نفس المقاس السابق */
+  display: block;
+}
+
+/* Make the aims title look wider (not compressed) */
+.aims-title{
+  /* حجم أكبر شوي */
+  font-size: clamp(28px, 3.6vw, 40px) !important;
+  font-weight:320 !important;
+  line-height: 1.15;
+
+  /* زيادة عرض الحروف والمسافات */
+  letter-spacing: 0.02em;          /* tracking خفيف */
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+
+  /* لو الخط عندك Variable (مثل Inter)، فعّل محور العرض */
+  font-stretch: 110%;              /* CSS standard */
+  font-variation-settings: "wdth" 110, "wght" 500; /* fallback لـ variable fonts */
+
+  /* موازنة تقطيع السطر لو احتاج */
+  text-wrap: balance;
+}
+
+/* اختياري: لو بدك عرض أكبر شوي */
+@supports not (font-stretch: 110%) {
+  /* fallback خفيف جدا للمتصفحات القديمة */
+  .aims-title { letter-spacing: 0.03em; }
+}
