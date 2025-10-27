@@ -11,8 +11,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/nav.css" />
-    <link href="css/chat2.css" rel="stylesheet" />
+  <link href="css/chat2.css" rel="stylesheet" />
 
+    
 
   <link rel="stylesheet" href="css/home.css" />
 
@@ -58,7 +59,8 @@
             <span data-translate-key="lang-common">العربية</span>
           </button>
 
-          <a href="https://vote.kasaji.ai/admin/login" class="sign-up-btn" data-translate-key="nav_signup" target="_blank">Sign up</a>
+          <a href="https://vote.kasaji.ai/admin/login" class="sign-up-btn" data-translate-key="nav_signup"
+            target="_blank">Sign up</a>
 
           <button class="menu-toggle" id="menuToggle" aria-controls="primaryNav" aria-expanded="false"
             aria-label="Open menu" title="Menu">
@@ -98,8 +100,10 @@
             every voice into better care
           </p>
           <div class="hero-buttons">
-            <a href="https://vote.kasaji.ai/admin/login" class="btn btn-hero-primary reveal" data-translate-key="hero_btn_signup" target="_blank">Sign up</a>
-            <a href="https://www.kasajixm.com/" class="btn btn-hero-secondary reveal" data-translate-key="hero_btn_demo" target="_blank">Experience Management</a>
+            <a href="https://vote.kasaji.ai/admin/login" class="btn btn-hero-primary reveal"
+              data-translate-key="hero_btn_signup" target="_blank">Sign up</a>
+            <a href="https://www.kasajixm.com/" class="btn btn-hero-secondary reveal" data-translate-key="hero_btn_demo"
+              target="_blank">Experience Management</a>
           </div>
         </div>
         <div class="hero-image reveal">
@@ -510,42 +514,92 @@
     </div>
   </footer>
 
+ <script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@0.62.0/dist/chat.bundle.es.js';
 
+  let chatBooted = false;
 
-  <!-- ودجت الدردشة (مربع صغير دائم بأسفل الصفحة) 
-  <section id="chat-widget" aria-live="polite">
-    <header id="cw-bar" class="cw-bar" role="button" tabindex="0"
-            aria-expanded="false" aria-controls="cw-panel" title="افتح الدردشة">
-      <div class="cw-bar-title">Kasaji Assistant</div>
-      <button id="cw-toggle" class="cw-bar-toggle" type="button" aria-label="فتح/إغلاق">▾</button>
-    </header>
+  function removeOldWidget() {
+    // حاول إزالة الجذر إذا موجود
+    document.querySelectorAll('[data-n8n-chat-root], n8n-chat, .n8n-chat, #n8n-chat')
+      .forEach(el => el.remove());
+    // نظّف أي جلسة قديمة تمنع تبديل اللغة
+    try {
+      Object.keys(localStorage)
+        .filter(k => k.toLowerCase().includes('n8n') || k.toLowerCase().includes('chat'))
+        .forEach(k => localStorage.removeItem(k));
+    } catch (e) {}
+  }
 
-    <div id="cw-panel" class="cw-panel" hidden>
-      <div class="cw-head">
-        <button id="cw-close" class="cw-close" type="button" aria-label="إغلاق">✕</button>
-      </div>
+  function initChatFor(lang) {
+    const dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-      <div id="cw-log" class="cw-log">
-        <div class="msg bot">أهلًا! كيف نقدر نساعدك؟</div>
-      </div>
-
-      <form id="cw-form" class="cw-form" autocomplete="off">
-        <input id="cw-input" name="q" type="text" placeholder="اكتب رسالتك..." required />
-        <button id="cw-send" type="submit">إرسال</button>
-      </form>
-    </div>
-    
-  </section>
- -->
-
-  
-  <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    removeOldWidget();
 
     createChat({
-      webhookUrl: 'https://hrobotna.app.n8n.cloud/webhook/19280663-ab7b-4ec0-b576-1b411634ce78/chat'
+      webhookUrl: 'https://hrobotna.app.n8n.cloud/webhook/19280663-ab7b-4ec0-b576-1b411634ce78/chat',
+      defaultLanguage: lang,
+      loadPreviousSession: false,       // مهم حتى ما “تلزق” لغة قديمة
+      metadata: { lang, dir },          // لو بتستعملها بالـ workflow
+
+      initialMessages: lang === 'ar'
+        ? ['مرحباً بك في مستشفى أربد التخصصي 👋', 'أنا فرح 😊، كيف ممكن أساعدك اليوم؟']
+        : ['Welcome to Irbid Specialty Hospital 👋', "I’m Farah 😊, how can I help today?"],
+
+      i18n: {
+        ar: {
+          title: 'يسعدنا تواصلك 💫',
+          subtitle: 'نحن هنا لدعمك والإجابة على أسئلتك على مدار الساعة',
+          inputPlaceholder: '..اكتب سؤالك هنا',
+          getStarted: 'بدء محادثة جديدة'
+        },
+        en: {
+          title: 'Hi there! 👋',
+          subtitle: "Start a chat. We're here to help you 24/7.",
+          inputPlaceholder: 'Type your question..',
+          getStarted: 'New Conversation'
+        }
+      }
     });
-  </script>
+
+    // اجبار الاتجاه داخل الودجت فقط عند AR
+    if (lang === 'ar') {
+      const applyRtl = () => {
+        const el = document.querySelector('[data-n8n-chat-root], n8n-chat, .n8n-chat, #n8n-chat');
+        if (el) el.setAttribute('dir', 'rtl');
+      };
+      applyRtl();
+      const mo = new MutationObserver(() => {
+        applyRtl();
+        const el = document.querySelector('[data-n8n-chat-root], n8n-chat, .n8n-chat, #n8n-chat');
+        if (el) mo.disconnect();
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  function bootFromPageLang() {
+    const pageLang = (document.documentElement.lang || 'en').toLowerCase();
+    initChatFor(pageLang.startsWith('ar') ? 'ar' : 'en');
+    chatBooted = true;
+  }
+
+  // 1) تشغيل أول مرة بحسب لغة الصفحة الحالية
+  bootFromPageLang();
+
+  // 2) راقب تغيّر lang على <html> (مثلاً عند زر تبديل اللغة)
+  const langObserver = new MutationObserver((mutations) => {
+    const lang = (document.documentElement.lang || '').toLowerCase();
+    if (!chatBooted || !lang) return;
+    // كل ما تتغيّر، أعد التهيئة
+    initChatFor(lang.startsWith('ar') ? 'ar' : 'en');
+  });
+  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+</script>
+
+
+
+
 
   <!-- Back to Top -->
   <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
