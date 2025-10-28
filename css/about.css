@@ -974,7 +974,7 @@ body[dir="rtl"] {
 @media (min-width: 992px) {
   html[dir="ltr"] .about-intro .about-heading {
     position: relative !important;
-    left: 80px !important;   /* زيد أو قلل الرقم حسب الحاجة (مثل 40px أو 80px) */
+    left: 82px !important;   /* زيد أو قلل الرقم حسب الحاجة (مثل 40px أو 80px) */
     transform: none !important;
     text-align: left !important;
   }
