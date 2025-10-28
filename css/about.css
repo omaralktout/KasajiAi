@@ -696,16 +696,11 @@ body{color:var(--about-text);line-height:1.6;font-family:Inter,system-ui,-apple-
 .about-intro__top{
   display:flex;
   flex-direction:column;
-  gap:8px;                 /* مسافة بين الشعار والعنوان */
+  gap:1px;                 /* مسافة بين الشعار والعنوان */
   margin-bottom:12px;
 }
 
-/* شعار KASAJI.AI كصورة (55px) */
-.about-kicker-img{
-  height:55px;
-  width:auto;
-  display:block;
-}
+
 
 /* عنوان بنفسجي */
 .about-heading{
@@ -953,5 +948,34 @@ body[dir="rtl"] {
   body[dir="rtl"] .about-intro .about-heading {
     direction: rtl !important;
     unicode-bidi: isolate !important;
+  }
+}
+
+
+/* Desktop LTR: align the purple title with the text column */
+@media (min-width: 992px) {
+  /* حط العنوان بعرض عمود النص وادفعه جهة عمود النص */
+  html[dir="ltr"] .about-intro__top{
+    max-width: 620px;         /* عدّل الرقم حسب عرض عمود النص عندك */
+    margin-left: auto;        /* يدفع البلوك لجهة عمود النص (يمين الـcontainer) */
+    align-items: flex-start !important;
+  }
+
+  html[dir="ltr"] .about-intro .about-heading{
+    position: static !important;
+    transform: none !important;
+    display: inline-block !important;
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
+    vertical-align: baseline !important;
+  }
+}
+/* Desktop English: move the purple title slightly to the right */
+@media (min-width: 992px) {
+  html[dir="ltr"] .about-intro .about-heading {
+    position: relative !important;
+    left: 80px !important;   /* زيد أو قلل الرقم حسب الحاجة (مثل 40px أو 80px) */
+    transform: none !important;
+    text-align: left !important;
   }
 }
