@@ -85,7 +85,7 @@
 
   .hero-title {
       font-size: 80px;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--text-dark);
       margin-bottom: 25px;
       line-height: 1.15
@@ -918,4 +918,40 @@ body[dir="rtl"] {
 @supports not (font-stretch: 110%) {
   /* fallback خفيف جدا للمتصفحات القديمة */
   .aims-title { letter-spacing: 0.03em; }
+}
+/* Mobile-only: center the about heading in both LTR & RTL and cancel the RTL shift */
+@media (max-width: 768px) {
+  .about-intro__top {
+    align-items: center !important; /* الشعار + العنوان بالنص */
+  }
+
+  .about-intro .about-heading {
+    text-align: center !important;  /* توسيط العنوان */
+    transform: none !important;     /* إلغاء translateX اللي بتسبب القص */
+    margin-inline: auto;            /* للتأكد من التوسيط */
+    display: block;                 /* سلوك متّسق */
+  }
+}
+/* ===== Mobile fix (put this at the very end of about.css) ===== */
+@media (max-width: 768px) {
+  /* سنتر الشريط العلوي */
+  body[dir="rtl"]  .about-intro__top,
+  body[dir="ltr"]  .about-intro__top {
+    align-items: center !important;
+  }
+
+  /* سنتر العنوان للغتين + إلغاء أي إزاحة */
+  body[dir="rtl"] .about-intro .about-heading,
+  body[dir="ltr"] .about-intro .about-heading {
+    text-align: center !important;
+    transform: none !important;      /* يلغي translateX */
+    margin-inline: auto !important;
+    display: block !important;
+  }
+
+  /* خلي العربي يلتف من اليمين بشكل سليم */
+  body[dir="rtl"] .about-intro .about-heading {
+    direction: rtl !important;
+    unicode-bidi: isolate !important;
+  }
 }
