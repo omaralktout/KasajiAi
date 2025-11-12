@@ -1911,3 +1911,67 @@ html.is-home .navbar .nav-links a.is-active::after {
     inset-inline-end: auto !important;
   }
 }
+
+
+/* === FULL-WIDTH DESKTOP LAYOUT (keeps mobile unchanged) === */
+@media (min-width: 993px) {
+  /* 1) Remove boxed layout caps on desktop */
+  .container,
+  .container-wide,
+  .navbar .container,
+  .main-header .container,
+  .hero .container-wide,
+  .services-section .container,
+  .service-item .container-wide,
+  .partners .container,
+  .how-it-works .container,
+  .whom-we-serve .container,
+  .why-stand-out .container,
+  .contact .container,
+  footer .container {
+    max-width: none !important;
+    width: 100% !important;
+    margin-inline: 0 !important;
+    /* keep some breathing room at the edges */
+    padding-inline: clamp(24px, 3vw, 48px) !important;
+  }
+
+  /* 2) Make hero & service rows truly span the width */
+  .hero .container-wide,
+  .service-item .container-wide {
+    justify-content: space-between !important; /* fix "space_between" */
+    gap: clamp(24px, 4vw, 64px) !important;
+  }
+
+  /* 3) Let visuals/content scale naturally without desktop caps */
+  .hero-image {
+    max-width: none !important;
+    flex: 0 1 48% !important;
+  }
+  .service-content {
+    max-width: none !important;
+  }
+  .service-visual {
+    inline-size: min(46vw, 900px) !important;
+  }
+
+  /* 4) Keep the page horizontally safe */
+  html, body { overflow-x: hidden; }
+}
+
+/* Optional: if you also want the Mission inner text block to span wider on desktop,
+   uncomment the next rule (it’s currently capped at 900px by design for readability). */
+/*
+@media (min-width: 993px) {
+  .mission-inner { max-width: none !important; }
+}
+*/
+
+
+
+
+body{
+    width:auto;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
